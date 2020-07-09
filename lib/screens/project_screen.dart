@@ -53,6 +53,30 @@ class ProjectScreen extends StatelessWidget {
               Navigator.pushNamed(context, EventScreen.routeName);
             },
             child: Text(
+              'Home',
+              style: TextStyle(
+                color: Color(0xFFF638DC),
+                fontSize: 24,
+              ),
+            ),
+          ),
+          FlatButton(
+            onPressed: () {
+              Navigator.pushNamed(context, EventScreen.routeName);
+            },
+            child: Text(
+              'Know Us',
+              style: TextStyle(
+                color: Color(0xFFF638DC),
+                fontSize: 24,
+              ),
+            ),
+          ),
+          FlatButton(
+            onPressed: () {
+              Navigator.pushNamed(context, EventScreen.routeName);
+            },
+            child: Text(
               'Events',
               style: TextStyle(
                 color: Color(0xFFF638DC),
@@ -72,6 +96,18 @@ class ProjectScreen extends StatelessWidget {
               ),
             ),
             padding: EdgeInsets.only(right: 20),
+          ),
+          FlatButton(
+            onPressed: () {
+              Navigator.pushNamed(context, EventScreen.routeName);
+            },
+            child: Text(
+              'Contact Us',
+              style: TextStyle(
+                color: Color(0xFFF638DC),
+                fontSize: 24,
+              ),
+            ),
           ),
         ],
         backgroundColor: Colors.black,
