@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import '../appBarr.dart';
 
-
-class ProjectScreen extends StatelessWidget {
- static const routeName='/ProjectScreen';
+class MemberScreen extends StatelessWidget {
+  static const routeName = '/MemberScreen';
   @override
   Widget build(BuildContext context) {
-    return Scaffold(backgroundColor: Colors.black,
+    return Scaffold(
       appBar: appBarr(context),
+      backgroundColor: Colors.black,
     );
   }
 }
