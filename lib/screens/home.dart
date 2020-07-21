@@ -48,33 +48,69 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
           ),
-          actions: [
-            FlatButton(
-              onPressed: () {
-                Navigator.pushNamed(context, EventScreen.routeName);
-              },
-              child: Text(
-                'Events',
-                style: TextStyle(
-                  color: Color(0xFFF638DC),
-                  fontSize: 24,
-                ),
+          actions:[
+          FlatButton(
+            onPressed: () {
+              Navigator.pushNamed(context, EventScreen.routeName);
+            },
+            child: Text(
+              'Home',
+              style: TextStyle(
+                color: Color(0xFFF638DC),
+                fontSize: 24,
               ),
             ),
-            FlatButton(
-              onPressed: () {
-                Navigator.pushNamed(context, ProjectScreen.routeName);
-              },
-              child: Text(
-                'Projects',
-                style: TextStyle(
-                  color: Color(0xFFF638DC),
-                  fontSize: 24,
-                ),
+          ),
+          FlatButton(
+            onPressed: () {
+              Navigator.pushNamed(context, EventScreen.routeName);
+            },
+            child: Text(
+              'Know Us',
+              style: TextStyle(
+                color: Color(0xFFF638DC),
+                fontSize: 24,
               ),
-              padding: EdgeInsets.only(right: 20),
             ),
-          ],
+          ),
+          FlatButton(
+            onPressed: () {
+              Navigator.pushNamed(context, EventScreen.routeName);
+            },
+            child: Text(
+              'Events',
+              style: TextStyle(
+                color: Color(0xFFF638DC),
+                fontSize: 24,
+              ),
+            ),
+          ),
+          FlatButton(
+            onPressed: () {
+              Navigator.pushNamed(context, ProjectScreen.routeName);
+            },
+            child: Text(
+              'Projects',
+              style: TextStyle(
+                color: Color(0xFFF638DC),
+                fontSize: 24,
+              ),
+            ),
+            padding: EdgeInsets.only(right: 20),
+          ),
+          FlatButton(
+            onPressed: () {
+              Navigator.pushNamed(context, EventScreen.routeName);
+            },
+            child: Text(
+              'Contact Us',
+              style: TextStyle(
+                color: Color(0xFFF638DC),
+                fontSize: 24,
+              ),
+            ),
+          ),
+        ],
           backgroundColor: Colors.black,
           elevation: 0,
        
