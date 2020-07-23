@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../appBarr.dart';
+import '../widgets/appBarr.dart';
 
 class KnowUsScreen extends StatelessWidget {
   static const routeName = '/KnowUsScreen';
