@@ -1,36 +1,27 @@
 import 'package:flutter/material.dart';
 
 class DetailsOfEvent {
-  Map<String, String> eventDetails;
+  Map<String, dynamic> eventDetails;
   DetailsOfEvent(this.eventDetails);
 }
 
 class DetailPageScreen extends StatelessWidget {
+ final Map<String, dynamic> event;
+  DetailPageScreen(this.event);
   static const routeName = '/DetailsPageScreen';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.black,
-        leading: Image.asset('assets/images/iiitvcc.png',)
-        // Container(
-        //   height: 150,
-        //   child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.start,
-        //     children: [
-        //       Expanded(
-        //         child: Container(
-        //           height: 180,
-        //           child: Image.asset(
-        //             'assets/images/CC-Logo.png',
-        //             fit: BoxFit.cover,
-        //           ),
-                
-        //         ),
-        //       ),
-        //     ],
-        //   ),
-        // ),
+        leading: ClipRRect(
+          borderRadius: BorderRadius.circular(80),
+          child: Image.asset(
+            'assets/images/iiitvcc.png',
+          ),
+        ),
+       
       ),
       body: ListView(
         children: [
@@ -39,12 +30,19 @@ class DetailPageScreen extends StatelessWidget {
               Container(
                 padding: EdgeInsets.only(left: 104),
                 height: 699,
+                width: 890,
                 child: Column(
-                  children: [],
+                  children: [
+                    Text(event['title'],style: TextStyle(color: Colors.white),),
+                  ],
                 ),
               ),
               Container(
-                width: 656,
+                height: 300,
+                width: 1,
+                color: Colors.purple,
+              ),
+              Container(
                 height: 699,
               ),
             ],

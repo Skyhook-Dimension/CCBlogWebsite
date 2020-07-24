@@ -117,9 +117,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                                         color: Colors.white),
                                                     fontSize: 25),
                                               ),
-                                              onPressed: () {
-                                                
-                                              },
+                                              onPressed: () {},
                                             ),
                                           ),
                                           SizedBox(
@@ -142,8 +140,15 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                                         color: Colors.white),
                                                     fontSize: 24),
                                               ),
-                                              onPressed: () {Navigator.of(context).pushNamed(
-                                                    DetailPageScreen.routeName);},
+                                              onPressed: () {
+                                                // Navigator.of(context).pushNamed(
+                                                //   DetailPageScreen.routeName,
+                                                //   arguments: DetailsOfEvent(widget.events[currentIndex.toInt()]),
+                                                // );
+                                                Navigator.of(context).push(
+                                                  MaterialPageRoute(builder: (context)=>DetailPageScreen(widget.events[currentIndex.toInt()],),)
+                                                );
+                                              },
                                             ),
                                           ),
                                         ],
