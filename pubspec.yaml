@@ -23,7 +23,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  google_fonts: ^1.1.0  
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -48,6 +48,9 @@ flutter:
   assets:
     - assets/images/CC-Logo.png
     - assets/images/illustration.png
+    - assets/images/pushkar.png
+    - assets/images/cclogowhite.png
+    - assets/images/dotlogo.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
