@@ -259,7 +259,307 @@ class _HomeScreenState extends State<HomeScreen> {
                       )
                     ],
                     overflow: Overflow.visible,
-                  )
+                  ),
+                  SizedBox(
+                    height: 121,
+                  ),
+                  Container(
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
+                        Container(
+                          padding: EdgeInsets.only(left: 74),
+                          child: Text(
+                            'TOP',
+                            style: GoogleFonts.montserrat(
+                              textStyle: Theme.of(context).textTheme.headline4,
+                              color: Color(0xFFF2F2F2),
+                              fontSize: 48,
+                              fontWeight: FontWeight.w200,
+                              //letterSpacing: -5,
+                            ),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 10),
+                          child: Text(
+                            'BLOGS',
+                            style: GoogleFonts.montserrat(
+                              textStyle: Theme.of(context).textTheme.headline4,
+                              color: Color(0xFFF2F2F2),
+                              fontSize: 48,
+                              fontWeight: FontWeight.w300,
+                              //letterSpacing: -5,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 101,
+                  ),
+                  Container(
+                    margin: EdgeInsets.symmetric(horizontal: 151),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        FlatButton(
+                          onPressed: () {},
+                          child: Container(
+                            child: Stack(
+                              children: <Widget>[
+                                Container(
+                                  width: 365,
+                                  height: 337,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20.0),
+                                    topRight: Radius.circular(20.0),
+                                  )),
+                                  child: Image.asset(
+                                    'assets/images/linux.jpg',
+                                    width: 365,
+                                    //height: 585,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                Positioned(
+                                  bottom: 0,
+                                  child: Container(
+                                    height: 75,
+                                    width: 365,
+                                    color: Color(0xFF602080),
+                                  ),
+                                ),
+                                Positioned(
+                                  bottom: 20,
+                                  left: 64,
+                                  child: Container(
+                                    //padding: EdgeInsets.only(top: 25),
+                                    child: Text(
+                                      'Top 10 Linux Distros',
+                                      style: GoogleFonts.robotoSlab(
+                                        textStyle: Theme.of(context)
+                                            .textTheme
+                                            .headline4,
+                                        color: Color(0xFFF2F2F2),
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w400,
+                                        //letterSpacing: -5,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        FlatButton(
+                          onPressed: () {},
+                          child: Container(
+                            child: Stack(
+                              children: <Widget>[
+                                Container(
+                                  width: 365,
+                                  height: 337,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20.0),
+                                    topRight: Radius.circular(20.0),
+                                  )),
+                                  child: Image.asset(
+                                    'assets/images/linux.jpg',
+                                    width: 365,
+                                    //height: 585,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                Positioned(
+                                  bottom: 0,
+                                  child: Container(
+                                    height: 75,
+                                    width: 365,
+                                    color: Color(0xFF602080),
+                                  ),
+                                ),
+                                Positioned(
+                                  bottom: 20,
+                                  left: 64,
+                                  child: Container(
+                                    //padding: EdgeInsets.only(top: 25),
+                                    child: Text(
+                                      'Top 10 Linux Distros',
+                                      style: GoogleFonts.robotoSlab(
+                                        textStyle: Theme.of(context)
+                                            .textTheme
+                                            .headline4,
+                                        color: Color(0xFFF2F2F2),
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w400,
+                                        //letterSpacing: -5,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        FlatButton(
+                          onPressed: () {},
+                          child: Container(
+                            child: Stack(
+                              children: <Widget>[
+                                Container(
+                                  width: 365,
+                                  height: 337,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.only(
+                                    topLeft: Radius.circular(20.0),
+                                    topRight: Radius.circular(20.0),
+                                  )),
+                                  child: Image.asset(
+                                    'assets/images/linux.jpg',
+                                    width: 365,
+                                    //height: 585,
+                                    fit: BoxFit.cover,
+                                  ),
+                                ),
+                                Positioned(
+                                  bottom: 0,
+                                  child: Container(
+                                    height: 75,
+                                    width: 365,
+                                    color: Color(0xFF602080),
+                                  ),
+                                ),
+                                Positioned(
+                                  bottom: 20,
+                                  left: 64,
+                                  child: Container(
+                                    //padding: EdgeInsets.only(top: 25),
+                                    child: Text(
+                                      'Top 10 Linux Distros',
+                                      style: GoogleFonts.robotoSlab(
+                                        textStyle: Theme.of(context)
+                                            .textTheme
+                                            .headline4,
+                                        color: Color(0xFFF2F2F2),
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w400,
+                                        //letterSpacing: -5,
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 65,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(left: 1255),
+                    child: FlatButton(
+                      onPressed: () {},
+                      //color: Color(0xFFF638DC),
+                      shape: new RoundedRectangleBorder(
+                        borderRadius: new BorderRadius.circular(30.0),
+                        side: BorderSide(
+                          color: Color(0xFFF638DC),
+                        ),
+                      ),
+                      child: Text(
+                        'View All Blogs',
+                        style: GoogleFonts.notoSans(
+                          textStyle: Theme.of(context).textTheme.headline4,
+                          color: Color(0xFFF638DC),
+                          fontSize: 24,
+                          fontWeight: FontWeight.w300,
+                          //letterSpacing: -5,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 132,
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(
+                      left: 100,
+                    ),
+                    height: 2,
+                    width: 1357,
+                    color: Color(0xFFF2F2F2),
+                  ),
+                  SizedBox(
+                    height: 56,
+                  ),
+                  Stack(alignment: Alignment.center, children: <Widget>[
+                    Container(
+                      height: 98,
+                      width: 1532,
+                      decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          begin: Alignment.centerLeft,
+                          end: Alignment.centerRight,
+                          stops: [0.0, 0.5, 1],
+                          colors: [
+                            Color(0xFF181818),
+                            Color(0xFF383838),
+                            Color(0xFF181818)
+                          ],
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 467),
+                      child: Row(
+                        children: <Widget>[
+                          Text(
+                            'Designed by DOT',
+                            style: GoogleFonts.montserrat(
+                              textStyle: Theme.of(context).textTheme.headline4,
+                              color: Color(0xFFF2F2F2),
+                              fontSize: 24,
+                              fontWeight: FontWeight.w300,
+                              //letterSpacing: -5,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 55,
+                          ),
+                          Container(
+                            margin: EdgeInsets.only(
+                              left: 57,
+                            ),
+                            height: 40,
+                            width: 2,
+                            color: Color(0xFF602080),
+                          ),
+                          SizedBox(
+                            width: 21,
+                          ),
+                          Text(
+                            'Developed by Coding Club',
+                            style: GoogleFonts.montserrat(
+                              textStyle: Theme.of(context).textTheme.headline4,
+                              color: Color(0xFFF2F2F2),
+                              fontSize: 24,
+                              fontWeight: FontWeight.w300,
+                              //letterSpacing: -5,
+                            ),
+                          ),
+                        ],
+                      ),
+                    )
+                  ])
                 ],
               ),
             ),
