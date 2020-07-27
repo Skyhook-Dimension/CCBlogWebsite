@@ -1,10 +1,5 @@
 import 'package:flutter/material.dart';
 
-class DetailsOfEvent {
-  Map<String, dynamic> eventDetails;
-  DetailsOfEvent(this.eventDetails);
-}
-
 class DetailPageScreen extends StatelessWidget {
  final Map<String, dynamic> event;
   DetailPageScreen(this.event);
