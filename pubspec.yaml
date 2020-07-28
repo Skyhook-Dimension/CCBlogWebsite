@@ -31,6 +31,7 @@ dependencies:
   carousel_slider: ^2.2.1
   dots_indicator: ^1.2.0
   google_fonts: ^1.1.0
+  signal_strength_indicator: ^0.3.0+1
 
 dev_dependencies:
   flutter_test:

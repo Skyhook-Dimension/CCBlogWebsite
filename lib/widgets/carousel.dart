@@ -75,7 +75,8 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                               style: GoogleFonts.montserrat(
                                                   textStyle: TextStyle(
                                                       color: Colors.white),
-                                                  fontSize: 64),
+                                                  fontSize: 64,
+                                                  fontWeight: FontWeight.w300),
                                             ),
                                           ),
                                           Padding(

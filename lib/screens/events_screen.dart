@@ -34,7 +34,7 @@ class _EventScreenState extends State<EventScreen> {
   ];
   List<Map<String, dynamic>> _events = [
     {
-      'title': 'Github Introduction Workshop',
+      'title': 'GITHUB INTRODUCTION WORKSHOP',
       'date': '20 June',
       'imageUrl': 'assets/images/github_introduction.png',
       'info':
@@ -44,12 +44,12 @@ class _EventScreenState extends State<EventScreen> {
       'duration': '2 hrs',
       'Speakers': ['Ashutosh Rathi', 'Monal Shadi'],
       'Skill Level': 1,
-      'prerequisite': 'None',
-      'requirements': 'Laptop with git installed',
+      'prerequisite': ['None'],
+      'requirements': ['Laptop with git installed'],
       'Poweredby':'assets/images/github_symbo.png'
     },
     {
-      'title': 'Bit-set-Go Coding contest',
+      'title': 'BIT-SET-GO CODING CONTEST',
       'date': '30 July',
       'imageUrl': 'assets/images/bitset_go.png',
       'info':
@@ -59,11 +59,11 @@ class _EventScreenState extends State<EventScreen> {
       'duration': '3 hrs',
       'Speakers': ['Pushkar Patel', 'Aman Raj'],
       'Skill Level': 1,
-      'prerequisite': 'None',
-      'requirements': 'Laptop and WILL to learn'
+      'prerequisite': ['None'],
+      'requirements': ['Laptop and WILL to learn']
     },
     {
-      'title': 'Objective C Backend workshop',
+      'title': 'OBJECTIVE C BACKEND WORKSHOP',
       'date': '20 August',
       'imageUrl': 'assets/images/objective-C.png',
       'info':
@@ -73,8 +73,8 @@ class _EventScreenState extends State<EventScreen> {
       'duration': '5 hrs',
       'Speakers': ['ABC'],
       'Skill Level': 2,
-      'prerequisite': 'oops basics',
-      'requirements': 'Laptop'
+      'prerequisite': ['oops basics'],
+      'requirements': ['Laptop']
     }
   ];
   @override
