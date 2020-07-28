@@ -96,13 +96,16 @@ class DetailPageScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                    IconButton(
-                      padding: EdgeInsets.only(left:50),
-                      icon: Icon(Icons.arrow_back,color:Colors.white),
-                      iconSize: 35,
-                      onPressed: () {
-                        Navigator.of(context).pop();
-                      },
+                    Align(
+                      alignment: Alignment.bottomLeft,
+                      child: IconButton(
+                        padding: EdgeInsets.only(left:50),
+                        icon: Icon(Icons.arrow_back,color:Colors.white),
+                        iconSize: 35,
+                        onPressed: () {
+                          Navigator.of(context).pop();
+                        },
+                      ),
                     )
                   ],
                 ),
@@ -126,24 +129,22 @@ class DetailPageScreen extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
                               Flexible(
+                                // padding: EdgeInsets.only(left:18,right:80),
                                 child: Text(
                                   'Speakers',
                                   style: GoogleFonts.montserrat(
                                       color: Color(0xff602080), fontSize: 32),
                                 ),
                               ),
-                              Expanded(
+                              Flexible(
                                 child: ListView.builder(
                                   shrinkWrap: true,
                                   itemBuilder: (ctx, index) {
                                     if (index == 0)
-                                      return Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 30.0),
-                                          child: Text(event['Speakers'][index],
-                                              style: GoogleFonts.montserrat(
-                                                  color: Colors.white,
-                                                  fontSize: 32)));
+                                      return Text(event['Speakers'][index],
+                                          style: GoogleFonts.montserrat(
+                                              color: Colors.white,
+                                              fontSize: 32));
                                     return Text(event['Speakers'][index],
                                         style: GoogleFonts.montserrat(
                                             color: Colors.white, fontSize: 32));
@@ -185,7 +186,7 @@ class DetailPageScreen extends StatelessWidget {
                                       color: Color(0xff602080), fontSize: 32),
                                 ),
                               ),
-                              Expanded(
+                              Flexible(
                                 child: ListView.builder(
                                   shrinkWrap: true,
                                   itemBuilder: (ctx, index) {
@@ -208,7 +209,7 @@ class DetailPageScreen extends StatelessWidget {
                             ],
                           ),
                           SizedBox(
-                            height: 50,
+                            height: 45,
                           ),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -220,19 +221,19 @@ class DetailPageScreen extends StatelessWidget {
                                       color: Color(0xff602080), fontSize: 32),
                                 ),
                               ),
-                              Expanded(
+                             Flexible(
+                                // height: 190,
+                                // width:250,
                                 child: ListView.builder(
-                                  shrinkWrap: true,
+                                  padding: EdgeInsets.all(0),
+                                  shrinkWrap: true,physics: ClampingScrollPhysics(),
                                   itemBuilder: (ctx, index) {
                                     if (index == 0)
-                                      return Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 30.0),
-                                          child: Text(
-                                              event['requirements'][index],
-                                              style: GoogleFonts.montserrat(
-                                                  color: Colors.white,
-                                                  fontSize: 32)));
+                                      return Text(
+                                          event['requirements'][index],
+                                          style: GoogleFonts.montserrat(
+                                              color: Colors.white,
+                                              fontSize: 32));
                                     return Text(event['requirements'][index],
                                         style: GoogleFonts.montserrat(
                                             color: Colors.white, fontSize: 32));
@@ -244,7 +245,21 @@ class DetailPageScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                    )
+                    ),
+                  //  ),
+                  //  ),
+                    
+                    if(event['Poweredby']!=null)
+                  //  Expanded(child:Align(alignment:Alignment.bottomRight ,child: 
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.max,
+                   children: [
+                     Text("Powered By: ",style: GoogleFonts.montserrat(fontSize: 32,color:Color(0xff602080))),
+                     Image.asset(event['Poweredby']),
+                   ],
+                   ),
+                   
                   ],
                 ),
               ),
