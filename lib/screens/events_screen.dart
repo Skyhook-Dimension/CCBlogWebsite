@@ -42,10 +42,10 @@ class _EventScreenState extends State<EventScreen> {
       'location': 'LH1, Sabar Campus',
       'time': '4 pm',
       'duration': '2 hrs',
-      'Speakers': ['Ashutosh Rathi', 'Monal Shadi','Monik'],
+      'Speakers': ['Ashutosh Rathi', 'Monal Shadi'],
       'Skill Level': 1,
       'prerequisite': ['None'],
-      'requirements': ['Laptop with git installed','abc','acc','aaccc'],
+      'requirements': ['Laptop with git installed'],
       'Poweredby':'assets/images/github_symbol.png'
     },
     {

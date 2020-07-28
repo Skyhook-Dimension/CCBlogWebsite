@@ -34,7 +34,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                       });
                     },
                     initialPage: 0,
-                    enableInfiniteScroll: false,
+                    enableInfiniteScroll: true,
                     reverse: false,
                     autoPlay: true,
                     autoPlayInterval: Duration(seconds: 5),
