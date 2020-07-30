@@ -23,7 +23,7 @@ class ProjectScreen extends StatelessWidget {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          height: 2759,
+          height: 1900,
           child: Stack(
             overflow: Overflow.visible,
             children: <Widget>[
@@ -89,22 +89,24 @@ class ProjectScreen extends StatelessWidget {
                       Container(
                         height: 360,
                         width: 1140,
-                        color: Color(0xff353535),
+                        color: Colors.transparent,
                         padding: EdgeInsets.all(35),
                         child: ListView.builder(
                           shrinkWrap: false,
                           scrollDirection: Axis.horizontal,
                           itemCount: project.length,
                           itemBuilder: (ctx, index) {
-                            // if (project[index]['isFeatured']) 
-                            return Card(
-                              elevation: 30,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(26)),
-                              child: Container(
-                                height: 331,
-                                width: 510,
+                            // if (project[index]['isFeatured'])
+                            return Container(
+                              height: 331,
+                              width: 510,
+                              color: Colors.transparent,
+                              // color: Color(0xff602080),
+                              child: Card(
                                 color: Color(0xff602080),
+                                elevation: 30,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(26)),
                                 child: Stack(
                                   children: [
                                     Positioned(
@@ -112,24 +114,29 @@ class ProjectScreen extends StatelessWidget {
                                       top: -180,
                                       child: Image.asset(
                                           'assets/images/project.png',
-                                          fit: BoxFit.scaleDown,
+                                          fit: BoxFit.fill,
                                           scale: 1.6),
                                     ),
-
                                     Padding(
                                       padding:
-                                          const EdgeInsets.only(top: 226.0),
+                                          const EdgeInsets.only(top: 223.0),
                                       child: Container(
                                         decoration: BoxDecoration(
                                           color: Color(0xff602080),
                                           borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(26),
+                                            bottomLeft: Radius.circular(40),
                                             bottomRight: Radius.circular(26),
                                           ),
                                         ),
                                         // color: Color(0xff602080),
-                                        height: 55,
+                                        height: 80,
                                         child: ListTile(
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(40),
+                                              bottomRight: Radius.circular(26),
+                                            ),
+                                          ),
                                           title: Text(project[index]['title'],
                                               style: GoogleFonts.notoSans(
                                                 color: Colors.white,
@@ -137,16 +144,15 @@ class ProjectScreen extends StatelessWidget {
                                                 fontWeight: FontWeight.bold,
                                               )),
                                           subtitle: Text(
-                                              project[index]['subtitle'],
-                                              style: GoogleFonts.sourceSansPro(
-                                                color: Colors.white,
-                                                fontSize: 18,
-                                              )),
+                                            project[index]['subtitle'],
+                                            style: GoogleFonts.sourceSansPro(
+                                              color: Colors.white,
+                                              fontSize: 18,
+                                            ),
+                                          ),
                                         ),
                                       ),
                                     ),
-                                    //   ),
-                                    // ),
                                   ],
                                 ),
                               ),
@@ -154,7 +160,9 @@ class ProjectScreen extends StatelessWidget {
                           },
                         ),
                       ),
-                      SizedBox(height: 60,),
+                      SizedBox(
+                        height: 60,
+                      ),
                       Stack(
                         children: [
                           Container(
@@ -180,8 +188,129 @@ class ProjectScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          
                         ],
+                      ),
+                      Container(
+                        height: 900,
+                        padding: EdgeInsets.only(left: 60, right: 60, top: 35),
+                        child: GridView.builder(
+                            shrinkWrap: true,
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 5.0,
+                              mainAxisSpacing: 5.0,
+                              childAspectRatio: 500 / 280,
+                            ),
+                            itemCount: project.length,
+                            itemBuilder: (ctx, index) {
+                              if (index >= project.length) return null;
+                              return Card(
+                                color: Color(0xff602080),
+                                elevation: 30,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(26)),
+                                child: Container(
+                                  height: 300,
+                                  width: 410,
+                                  color: Color(0xff602080),
+                                  child: Stack(
+                                    children: [
+                                      Positioned(
+                                        right: -40,
+                                        top: -180,
+                                        child: Image.asset(
+                                            'assets/images/project.png',
+                                            fit: BoxFit.fill,
+                                            scale: 1.6),
+                                      ),
+
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 223.0),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: Color(0xff602080),
+                                            borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(40),
+                                              bottomRight: Radius.circular(26),
+                                            ),
+                                          ),
+                                          // color: Color(0xff602080),
+                                          height: 80,
+                                          child: ListTile(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(40),
+                                                bottomRight:
+                                                    Radius.circular(26),
+                                              ),
+                                            ),
+                                            title: Text(project[index]['title'],
+                                                style: GoogleFonts.notoSans(
+                                                  color: Colors.white,
+                                                  fontSize: 24,
+                                                  fontWeight: FontWeight.bold,
+                                                )),
+                                            subtitle: Text(
+                                                project[index]['subtitle'],
+                                                style:
+                                                    GoogleFonts.sourceSansPro(
+                                                  color: Colors.white,
+                                                  fontSize: 18,
+                                                )),
+                                          ),
+                                        ),
+                                      ),
+                                      //   ),
+                                      // ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            }),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Positioned(
+                bottom: 0,
+                child: Container(
+                  height: 98,
+                  width: 1532,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        // color: Colors.black,
+                        decoration: BoxDecoration(gradient: LinearGradient(colors: [ Color(0xff181818) , Color(0xff383838), Color(0xff181818) ]),
+                        ),
+                        
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Container(
+                              child: Text(
+                                'Designed by DOT',
+                                style: GoogleFonts.montserrat(
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 30,
+                                  color: Color(0xffF2F2F2),
+                                ),
+                              ),
+                            ),
+                            SizedBox(width: 20),
+                            Container(
+                              height: 64,
+                              width: 64,
+                              child: Image.asset(
+                                'assets/images/dotlogo.png',
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
