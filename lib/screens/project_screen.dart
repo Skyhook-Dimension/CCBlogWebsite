@@ -277,16 +277,21 @@ class ProjectScreen extends StatelessWidget {
               Positioned(
                 bottom: 0,
                 child: Container(
-                  height: 98,
+                  height: 110,
                   width: 1532,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
                         // color: Colors.black,
-                        decoration: BoxDecoration(gradient: LinearGradient(colors: [ Color(0xff181818) , Color(0xff383838), Color(0xff181818) ]),
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(colors: [
+                            Color(0xff181818),
+                            Color(0xff383838),
+                            Color(0xff181818)
+                          ]),
                         ),
-                        
+
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -294,19 +299,48 @@ class ProjectScreen extends StatelessWidget {
                               child: Text(
                                 'Designed by DOT',
                                 style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 30,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 24,
+                                  color: Color(0xffF2F2F2),
+                                ),
+                              ),
+                            ),
+                            // SizedBox(width: 20),
+                            Container(
+                              height: 56,
+                              width: 56,
+                              child: Image.asset(
+                                'assets/images/dotlogo.png',
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            SizedBox(width: 5),
+                            Container(
+                              width: 3,
+                              height: 52,
+                              color: Color(0xffF638DC),
+                            ),
+                            SizedBox(width: 10),
+                            Container(
+                              child: Text(
+                                'Designed by Coding Club',
+                                style: GoogleFonts.montserrat(
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 24,
                                   color: Color(0xffF2F2F2),
                                 ),
                               ),
                             ),
                             SizedBox(width: 20),
                             Container(
-                              height: 64,
-                              width: 64,
-                              child: Image.asset(
-                                'assets/images/dotlogo.png',
-                                fit: BoxFit.cover,
+                              height: 48,
+                              width: 48,
+                              child: ClipRRect(
+                                borderRadius: BorderRadius.circular(60),
+                                child: Image.asset(
+                                  'assets/images/iiitvcc.png',
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ],
