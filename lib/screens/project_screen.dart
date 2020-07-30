@@ -23,7 +23,7 @@ class ProjectScreen extends StatelessWidget {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Container(
-          height: 1900,
+          height: 2300,
           child: Stack(
             overflow: Overflow.visible,
             children: <Widget>[
@@ -54,7 +54,7 @@ class ProjectScreen extends StatelessWidget {
                 width: 1200,
                 left: 157,
                 child: Container(
-                  height: 1493,
+                  height: 2000,
                   width: 1920,
                   color: Color(0xff353535),
                   child: Column(
@@ -86,80 +86,92 @@ class ProjectScreen extends StatelessWidget {
                           ),
                         ],
                       ),
-                      Container(
-                        height: 360,
-                        width: 1140,
-                        color: Colors.transparent,
-                        padding: EdgeInsets.all(35),
-                        child: ListView.builder(
-                          shrinkWrap: false,
-                          scrollDirection: Axis.horizontal,
-                          itemCount: project.length,
-                          itemBuilder: (ctx, index) {
-                            // if (project[index]['isFeatured'])
-                            return Container(
-                              height: 331,
-                              width: 510,
-                              color: Colors.transparent,
-                              // color: Color(0xff602080),
-                              child: Card(
-                                color: Color(0xff602080),
-                                elevation: 30,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(26)),
-                                child: Stack(
-                                  children: [
-                                    Positioned(
-                                      right: -40,
-                                      top: -180,
-                                      child: Image.asset(
-                                          'assets/images/project.png',
-                                          fit: BoxFit.fill,
-                                          scale: 1.6),
-                                    ),
-                                    Padding(
-                                      padding:
-                                          const EdgeInsets.only(top: 223.0),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          color: Color(0xff602080),
-                                          borderRadius: BorderRadius.only(
-                                            bottomLeft: Radius.circular(40),
-                                            bottomRight: Radius.circular(26),
-                                          ),
-                                        ),
-                                        // color: Color(0xff602080),
-                                        height: 80,
-                                        child: ListTile(
-                                          shape: RoundedRectangleBorder(
+                      Flexible(
+                        // child:
+                        // Expanded(
+                        child: Container(
+                          // height: 2000,
+                          width: 1140,
+                          color: Colors.transparent,
+                          padding: EdgeInsets.all(35),
+                          child: GridView.builder(
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 5.0,
+                              mainAxisSpacing: 5.0,
+                              childAspectRatio: 500 / 280,
+                            ),
+                            shrinkWrap: false,
+                            itemCount: project.length,
+                            itemBuilder: (ctx, index) {
+                              // if (project[index]['isFeatured'])
+                              return Container(
+                                height: 331,
+                                width: 510,
+                                color: Colors.transparent,
+                                // color: Color(0xff602080),
+                                child: Card(
+                                  color: Color(0xff602080),
+                                  elevation: 30,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(26)),
+                                  child: Stack(
+                                    children: [
+                                      Positioned(
+                                        right: -40,
+                                        top: -180,
+                                        child: Image.asset(
+                                            'assets/images/project.png',
+                                            fit: BoxFit.fill,
+                                            scale: 1.6),
+                                      ),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 223.0),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: Color(0xff602080),
                                             borderRadius: BorderRadius.only(
                                               bottomLeft: Radius.circular(40),
                                               bottomRight: Radius.circular(26),
                                             ),
                                           ),
-                                          title: Text(project[index]['title'],
-                                              style: GoogleFonts.notoSans(
+                                          // color: Color(0xff602080),
+                                          height: 80,
+                                          child: ListTile(
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius: BorderRadius.only(
+                                                bottomLeft: Radius.circular(40),
+                                                bottomRight:
+                                                    Radius.circular(26),
+                                              ),
+                                            ),
+                                            title: Text(project[index]['title'],
+                                                style: GoogleFonts.notoSans(
+                                                  color: Colors.white,
+                                                  fontSize: 24,
+                                                  fontWeight: FontWeight.bold,
+                                                )),
+                                            subtitle: Text(
+                                              project[index]['subtitle'],
+                                              style: GoogleFonts.sourceSansPro(
                                                 color: Colors.white,
-                                                fontSize: 24,
-                                                fontWeight: FontWeight.bold,
-                                              )),
-                                          subtitle: Text(
-                                            project[index]['subtitle'],
-                                            style: GoogleFonts.sourceSansPro(
-                                              color: Colors.white,
-                                              fontSize: 18,
+                                                fontSize: 18,
+                                              ),
                                             ),
                                           ),
                                         ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
-                              ),
-                            );
-                          },
+                              );
+                            },
+                          ),
                         ),
                       ),
+                      // ),
                       SizedBox(
                         height: 60,
                       ),
@@ -193,82 +205,85 @@ class ProjectScreen extends StatelessWidget {
                       Container(
                         height: 900,
                         padding: EdgeInsets.only(left: 60, right: 60, top: 35),
-                        child: GridView.builder(
-                            shrinkWrap: true,
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 2,
-                              crossAxisSpacing: 5.0,
-                              mainAxisSpacing: 5.0,
-                              childAspectRatio: 500 / 280,
-                            ),
-                            itemCount: project.length,
-                            itemBuilder: (ctx, index) {
-                              if (index >= project.length) return null;
-                              return Card(
-                                color: Color(0xff602080),
-                                elevation: 30,
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(26)),
-                                child: Container(
-                                  height: 300,
-                                  width: 410,
+                        child: Padding(
+                          padding: const EdgeInsets.only(bottom:50.0),
+                          child: GridView.builder(
+                              shrinkWrap: true,
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 2,
+                                crossAxisSpacing: 5.0,
+                                mainAxisSpacing: 5.0,
+                                childAspectRatio: 500 / 280,
+                              ),
+                              itemCount: project.length,
+                              itemBuilder: (ctx, index) {
+                                if (index >= project.length) return null;
+                                return Card(
                                   color: Color(0xff602080),
-                                  child: Stack(
-                                    children: [
-                                      Positioned(
-                                        right: -40,
-                                        top: -180,
-                                        child: Image.asset(
-                                            'assets/images/project.png',
-                                            fit: BoxFit.fill,
-                                            scale: 1.6),
-                                      ),
+                                  elevation: 30,
+                                  shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(26)),
+                                  child: Container(
+                                    height: 300,
+                                    width: 410,
+                                    color: Color(0xff602080),
+                                    child: Stack(
+                                      children: [
+                                        Positioned(
+                                          right: -40,
+                                          top: -180,
+                                          child: Image.asset(
+                                              'assets/images/project.png',
+                                              fit: BoxFit.fill,
+                                              scale: 1.6),
+                                        ),
 
-                                      Padding(
-                                        padding:
-                                            const EdgeInsets.only(top: 223.0),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            color: Color(0xff602080),
-                                            borderRadius: BorderRadius.only(
-                                              bottomLeft: Radius.circular(40),
-                                              bottomRight: Radius.circular(26),
-                                            ),
-                                          ),
-                                          // color: Color(0xff602080),
-                                          height: 80,
-                                          child: ListTile(
-                                            shape: RoundedRectangleBorder(
+                                        Padding(
+                                          padding:
+                                              const EdgeInsets.only(top: 223.0),
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              color: Color(0xff602080),
                                               borderRadius: BorderRadius.only(
                                                 bottomLeft: Radius.circular(40),
-                                                bottomRight:
-                                                    Radius.circular(26),
+                                                bottomRight: Radius.circular(26),
                                               ),
                                             ),
-                                            title: Text(project[index]['title'],
-                                                style: GoogleFonts.notoSans(
-                                                  color: Colors.white,
-                                                  fontSize: 24,
-                                                  fontWeight: FontWeight.bold,
-                                                )),
-                                            subtitle: Text(
-                                                project[index]['subtitle'],
-                                                style:
-                                                    GoogleFonts.sourceSansPro(
-                                                  color: Colors.white,
-                                                  fontSize: 18,
-                                                )),
+                                            // color: Color(0xff602080),
+                                            height: 80,
+                                            child: ListTile(
+                                              shape: RoundedRectangleBorder(
+                                                borderRadius: BorderRadius.only(
+                                                  bottomLeft: Radius.circular(40),
+                                                  bottomRight:
+                                                      Radius.circular(26),
+                                                ),
+                                              ),
+                                              title: Text(project[index]['title'],
+                                                  style: GoogleFonts.notoSans(
+                                                    color: Colors.white,
+                                                    fontSize: 24,
+                                                    fontWeight: FontWeight.bold,
+                                                  )),
+                                              subtitle: Text(
+                                                  project[index]['subtitle'],
+                                                  style:
+                                                      GoogleFonts.sourceSansPro(
+                                                    color: Colors.white,
+                                                    fontSize: 18,
+                                                  )),
+                                            ),
                                           ),
                                         ),
-                                      ),
-                                      //   ),
-                                      // ),
-                                    ],
+                                        //   ),
+                                        // ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                              );
-                            }),
+                                );
+                              }),
+                        ),
                       ),
                     ],
                   ),
@@ -299,7 +314,7 @@ class ProjectScreen extends StatelessWidget {
                               child: Text(
                                 'Designed by DOT',
                                 style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.normal,
+                                  fontWeight: FontWeight.w300,
                                   fontSize: 24,
                                   color: Color(0xffF2F2F2),
                                 ),
@@ -325,7 +340,7 @@ class ProjectScreen extends StatelessWidget {
                               child: Text(
                                 'Designed by Coding Club',
                                 style: GoogleFonts.montserrat(
-                                  fontWeight: FontWeight.normal,
+                                  fontWeight: FontWeight.w300,
                                   fontSize: 24,
                                   color: Color(0xffF2F2F2),
                                 ),
