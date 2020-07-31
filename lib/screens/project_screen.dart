@@ -5,14 +5,16 @@ import 'package:google_fonts/google_fonts.dart';
 class ProjectScreen extends StatelessWidget {
   static const routeName = '/ProjectScreen';
   final List<Map<String, dynamic>> project = [
+    {'title': 'def', 'subtitle': "my Good Project"},
+    {'title': 'abc', 'subtitle': "Good Project"},
+    {'title': 'abc', 'subtitle': "Good Project"},
+    {'title': 'abc', 'subtitle': "Good Project"},
+    {'title': 'abc', 'subtitle': "Good Project"},
+  ];
+  final List<Map<String, dynamic>> _featuredProject = [
     {'title': 'abc', 'subtitle': "Good Project", 'isFeatured': true},
-    {'title': 'def', 'subtitle': "my Good Project", 'isFeatured': false},
     {'title': 'abcde', 'subtitle': "Excellent Project", 'isFeatured': true},
-    {'title': 'abc', 'subtitle': "Good Project", 'isFeatured': false},
-    {'title': 'abc', 'subtitle': "Good Project", 'isFeatured': false},
     {'title': 'abcde', 'subtitle': "Excellent Project", 'isFeatured': true},
-    {'title': 'abc', 'subtitle': "Good Project", 'isFeatured': false},
-    {'title': 'abc', 'subtitle': "Good Project", 'isFeatured': false},
   ];
   final dynamic imageDest = 'assets/images/project.png';
   @override
@@ -90,7 +92,7 @@ class ProjectScreen extends StatelessWidget {
                         // child:
                         // Expanded(
                         child: Container(
-                          // height: 2000,
+                          height: 800,
                           width: 1140,
                           color: Colors.transparent,
                           padding: EdgeInsets.all(35),
@@ -103,9 +105,9 @@ class ProjectScreen extends StatelessWidget {
                               childAspectRatio: 500 / 280,
                             ),
                             shrinkWrap: false,
-                            itemCount: project.length,
+                            itemCount: _featuredProject.length,
                             itemBuilder: (ctx, index) {
-                              // if (project[index]['isFeatured'])
+                              // if (_featuredProject[index]['isFeatured'])
                               return Container(
                                 height: 331,
                                 width: 510,
@@ -206,7 +208,7 @@ class ProjectScreen extends StatelessWidget {
                         height: 900,
                         padding: EdgeInsets.only(left: 60, right: 60, top: 35),
                         child: Padding(
-                          padding: const EdgeInsets.only(bottom:50.0),
+                          padding: const EdgeInsets.only(bottom: 50.0),
                           child: GridView.builder(
                               shrinkWrap: true,
                               gridDelegate:
@@ -247,7 +249,8 @@ class ProjectScreen extends StatelessWidget {
                                               color: Color(0xff602080),
                                               borderRadius: BorderRadius.only(
                                                 bottomLeft: Radius.circular(40),
-                                                bottomRight: Radius.circular(26),
+                                                bottomRight:
+                                                    Radius.circular(26),
                                               ),
                                             ),
                                             // color: Color(0xff602080),
@@ -255,12 +258,14 @@ class ProjectScreen extends StatelessWidget {
                                             child: ListTile(
                                               shape: RoundedRectangleBorder(
                                                 borderRadius: BorderRadius.only(
-                                                  bottomLeft: Radius.circular(40),
+                                                  bottomLeft:
+                                                      Radius.circular(40),
                                                   bottomRight:
                                                       Radius.circular(26),
                                                 ),
                                               ),
-                                              title: Text(project[index]['title'],
+                                              title: Text(
+                                                  project[index]['title'],
                                                   style: GoogleFonts.notoSans(
                                                     color: Colors.white,
                                                     fontSize: 24,

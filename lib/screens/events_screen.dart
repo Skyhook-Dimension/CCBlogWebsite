@@ -43,7 +43,7 @@ class _EventScreenState extends State<EventScreen> {
       'time': '4 pm',
       'duration': '2 hrs',
       'Speakers': ['Ashutosh Rathi', 'Monal Shadi'],
-      'Skill Level': 1,
+      'SkillLevel': 1,
       'prerequisite': ['None'],
       'requirements': ['Laptop with git installed'],
       'Poweredby':'assets/images/github_symbol.png'
@@ -58,7 +58,7 @@ class _EventScreenState extends State<EventScreen> {
       'time': '6 pm',
       'duration': '3 hrs',
       'Speakers': ['Pushkar Patel', 'Aman Raj'],
-      'Skill Level': 1,
+      'SkillLevel': 1,
       'prerequisite': ['None'],
       'requirements': ['Laptop and WILL to learn']
     },
@@ -72,7 +72,7 @@ class _EventScreenState extends State<EventScreen> {
       'time': '10 am',
       'duration': '5 hrs',
       'Speakers': ['ABC'],
-      'Skill Level': 2,
+      'SkillLevel': 2,
       'prerequisite': ['oops basics'],
       'requirements': ['Laptop']
     }
