@@ -34,7 +34,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                       });
                     },
                     initialPage: 0,
-                    enableInfiniteScroll: false,
+                    enableInfiniteScroll: true,
                     reverse: false,
                     autoPlay: true,
                     autoPlayInterval: Duration(seconds: 5),
@@ -75,7 +75,8 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                               style: GoogleFonts.montserrat(
                                                   textStyle: TextStyle(
                                                       color: Colors.white),
-                                                  fontSize: 64),
+                                                  fontSize: 64,
+                                                  fontWeight: FontWeight.w300),
                                             ),
                                           ),
                                           Padding(
@@ -117,9 +118,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                                         color: Colors.white),
                                                     fontSize: 25),
                                               ),
-                                              onPressed: () {
-                                                
-                                              },
+                                              onPressed: () {},
                                             ),
                                           ),
                                           SizedBox(
@@ -142,8 +141,15 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                                         color: Colors.white),
                                                     fontSize: 24),
                                               ),
-                                              onPressed: () {Navigator.of(context).pushNamed(
-                                                    DetailPageScreen.routeName);},
+                                              onPressed: () {
+                                                // Navigator.of(context).pushNamed(
+                                                //   DetailPageScreen.routeName,
+                                                //   arguments: DetailsOfEvent(widget.events[currentIndex.toInt()]),
+                                                // );
+                                                Navigator.of(context).push(
+                                                  MaterialPageRoute(builder: (context)=>DetailPageScreen(widget.events[currentIndex.toInt()],),)
+                                                );
+                                              },
                                             ),
                                           ),
                                         ],
