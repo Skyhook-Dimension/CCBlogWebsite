@@ -31,7 +31,7 @@ class DetailPageScreen extends StatelessWidget {
           Row(
             children: [
               Container(
-                height: 690,
+                height: 645,
                 width: 700,
                 child: Column(
                   // mainAxisAlignment: ,
@@ -51,7 +51,7 @@ class DetailPageScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w200),
                           ),
                           SizedBox(
-                            height: 45,
+                            height: 10,
                           ),
                           Text(
                             event['date'],
@@ -59,7 +59,7 @@ class DetailPageScreen extends StatelessWidget {
                                 color: Colors.white, fontSize: 45),
                           ),
                           SizedBox(
-                            height: 54,
+                            height: 20,
                           ),
                           Text(
                             event['info'],
@@ -69,7 +69,7 @@ class DetailPageScreen extends StatelessWidget {
                                 fontWeight: FontWeight.w300),
                           ),
                           SizedBox(
-                            height: 38,
+                            height: 33,
                           ),
                           Text(
                             event['location'],
@@ -113,16 +113,16 @@ class DetailPageScreen extends StatelessWidget {
               ),
               Container(width: 150),
               Container(
-                height: 680,
+                height: 620,
                 width: 2,
                 color: Color(0xff602080),
               ),
               Container(
-                height: 699,
+                height: 640,
                 child: Column(
                   children: [
                     Container(
-                      height: 600,
+                      height: 560,
                       width: 500,
                       child: Column(
                         children: [
