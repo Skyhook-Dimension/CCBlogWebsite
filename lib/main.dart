@@ -6,7 +6,7 @@ import './screens/knowUs.dart';
 import './screens/members.dart';
 import './screens/events_screen.dart';
 import './screens/project_screen.dart';
-
+import './screens/pastevents.dart';
 void main() {
   runApp(MyApp());
 }
@@ -20,7 +20,8 @@ class MyApp extends StatelessWidget {
         ProjectScreen.routeName: (context) => ProjectScreen(),
         KnowUsScreen.routeName:(context) => KnowUsScreen(),
         ContactScreen.routeName:(context) => ContactScreen(),
-        MemberScreen.routeName:(context )=> MemberScreen()
+        MemberScreen.routeName:(context )=> MemberScreen(),
+        PastEventsScreen.routeName:(context )=>PastEventsScreen()
       },
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
