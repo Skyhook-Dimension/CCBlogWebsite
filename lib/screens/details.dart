@@ -98,13 +98,20 @@ class DetailPageScreen extends StatelessWidget {
                     Expanded(
                       child: Align(
                         alignment: Alignment.bottomLeft,
-                        child: IconButton(
-                          padding: EdgeInsets.only(left: 50),
-                          icon: Icon(Icons.arrow_back, color: Colors.white),
-                          iconSize: 35,
-                          onPressed: () {
-                            Navigator.of(context).pop();
-                          },
+                        child: Padding(
+                            padding: EdgeInsets.only(left: 50),
+                          // padding: const EdgeInsets.all(8.0),
+                          child: CircleAvatar(
+                            radius: 20,
+                            backgroundColor: Color(0xff602080),
+                                                    child: IconButton(
+                              icon: Icon(Icons.arrow_back, color: Colors.black),
+                              iconSize: 25,
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ),
                         ),
                       ),
                     )
