@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       routes: {
+        HomeScreen.routeName:(context)=>HomeScreen(),
         EventScreen.routeName: (context) => EventScreen(),
         ProjectScreen.routeName: (context) => ProjectScreen(),
         KnowUsScreen.routeName:(context) => KnowUsScreen(),

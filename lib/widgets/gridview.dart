@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-Widget gridViewEvent(List<Map<String, String>> event) {
+Widget gridViewEvent(List<Map<String, dynamic>> event) {
   return GridView.count(
     shrinkWrap: false,
     crossAxisCount: 3,

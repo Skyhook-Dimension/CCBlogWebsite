@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:mywebapp/screens/details.dart';
 
 class CarouselWidget extends StatefulWidget {
-  final List<Map<String, String>> events;
+  final List<Map<String, dynamic>> events;
   CarouselWidget(this.events);
   @override
   _CarouselWidgetState createState() => _CarouselWidgetState();
@@ -33,7 +34,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                       });
                     },
                     initialPage: 0,
-                    enableInfiniteScroll: false,
+                    enableInfiniteScroll: true,
                     reverse: false,
                     autoPlay: true,
                     autoPlayInterval: Duration(seconds: 5),
@@ -74,7 +75,8 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                               style: GoogleFonts.montserrat(
                                                   textStyle: TextStyle(
                                                       color: Colors.white),
-                                                  fontSize: 64),
+                                                  fontSize: 64,
+                                                  fontWeight: FontWeight.w300),
                                             ),
                                           ),
                                           Padding(
@@ -82,7 +84,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                                 left: 100.0),
                                             child: Text(
                                               event['date'],
-                                              style: GoogleFonts.abel(
+                                              style: GoogleFonts.lato(
                                                   textStyle: TextStyle(
                                                       color: Colors.white),
                                                   fontSize: 45),
@@ -139,7 +141,15 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                                         color: Colors.white),
                                                     fontSize: 24),
                                               ),
-                                              onPressed: () {},
+                                              onPressed: () {
+                                                // Navigator.of(context).pushNamed(
+                                                //   DetailPageScreen.routeName,
+                                                //   arguments: DetailsOfEvent(widget.events[currentIndex.toInt()]),
+                                                // );
+                                                Navigator.of(context).push(
+                                                  MaterialPageRoute(builder: (context)=>DetailPageScreen(widget.events[currentIndex.toInt()],),)
+                                                );
+                                              },
                                             ),
                                           ),
                                         ],
@@ -161,32 +171,31 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                               ),
                             ],
                           ),
-                         
                         ],
                       ),
                     );
                   }).toList(),
                 ),
-              ),Container(
-                color:Colors.black,
+              ),
+              Container(
+                color: Colors.black,
                 width: MediaQuery.of(context).size.width,
                 height: 50,
                 child: DotsIndicator(
-                              mainAxisSize: MainAxisSize.max,
-                              dotsCount: widget.events.length,
-                              position: currentIndex,
-                              decorator: DotsDecorator(
-                                  color: Color.fromRGBO(121, 121, 121, 1), // Inactive color
-                                  activeColor: Color.fromRGBO(96, 32, 128, 1),
-                                  activeSize: Size.square(23),
-                                  size: Size.square(17),
-                                  spacing: EdgeInsets.symmetric(horizontal: 10)),
-                            ),
+                  mainAxisSize: MainAxisSize.max,
+                  dotsCount: widget.events.length,
+                  position: currentIndex,
+                  decorator: DotsDecorator(
+                      color: Color.fromRGBO(121, 121, 121, 1), // Inactive color
+                      activeColor: Color.fromRGBO(96, 32, 128, 1),
+                      activeSize: Size.square(23),
+                      size: Size.square(17),
+                      spacing: EdgeInsets.symmetric(horizontal: 10)),
+                ),
               ),
-            ], 
+            ],
           ),
         ),
-        
       ],
     );
   }
