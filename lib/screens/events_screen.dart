@@ -43,10 +43,10 @@ class _EventScreenState extends State<EventScreen> {
       'time': '4 pm',
       'duration': '2 hrs',
       'Speakers': ['Ashutosh Rathi', 'Monal Shadi'],
-      'Skill Level': 1,
+      'SkillLevel': 1,
       'prerequisite': ['None'],
       'requirements': ['Laptop with git installed'],
-      'Poweredby':'assets/images/github_symbol.png'
+      'Poweredby': 'assets/images/github_symbol.png'
     },
     {
       'title': 'BIT-SET-GO CODING CONTEST',
@@ -58,7 +58,7 @@ class _EventScreenState extends State<EventScreen> {
       'time': '6 pm',
       'duration': '3 hrs',
       'Speakers': ['Pushkar Patel', 'Aman Raj'],
-      'Skill Level': 1,
+      'SkillLevel': 1,
       'prerequisite': ['None'],
       'requirements': ['Laptop and WILL to learn']
     },
@@ -66,17 +66,17 @@ class _EventScreenState extends State<EventScreen> {
       'title': 'OBJECTIVE C BACKEND WORKSHOP',
       'date': '20 August',
       'imageUrl': 'assets/images/objective-C.png',
-      'info':
-          'Help you learn Objective C',
+      'info': 'Help you learn Objective C',
       'location': 'LH1, Sabar Campus',
       'time': '10 am',
       'duration': '5 hrs',
       'Speakers': ['ABC'],
-      'Skill Level': 2,
+      'SkillLevel': 2,
       'prerequisite': ['oops basics'],
       'requirements': ['Laptop']
     }
   ];
+  bool isPressed = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -161,14 +161,18 @@ class _EventScreenState extends State<EventScreen> {
                           Radius.circular(100),
                         ),
                       ),
-                      color: Colors.transparent,
+                      color: isPressed ? Colors.transparent : Color(0xff602080),
                       highlightColor: Color.fromRGBO(96, 32, 128, 1),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          isPressed = false;
+                        });
+                      },
                       child: Text(
                         '2019',
-                        style: GoogleFonts.montserrat(
+                        style: GoogleFonts.sourceSansPro(
                           textStyle:
-                              TextStyle(fontSize: 30, color: Colors.white),
+                              TextStyle(fontSize: 36,fontWeight: FontWeight.bold ,color: Colors.white),
                         ),
                       ),
                     ),
@@ -181,16 +185,18 @@ class _EventScreenState extends State<EventScreen> {
                           Radius.circular(100),
                         ),
                       ),
-                      color: Colors.transparent,
+                      color: isPressed ? Color(0xff602080) : Colors.transparent,
                       highlightColor: Color.fromRGBO(96, 32, 128, 1),
                       onPressed: () {
-                        Text('hello');
+                        setState(() {
+                          isPressed = true;
+                        });
                       },
                       child: Text(
                         '2020',
-                        style: GoogleFonts.montserrat(
+                        style: GoogleFonts.sourceSansPro(
                           textStyle:
-                              TextStyle(fontSize: 30, color: Colors.white),
+                              TextStyle(fontSize: 36,fontWeight: FontWeight.bold ,color: Colors.white),
                         ),
                       ),
                     ),
@@ -199,11 +205,21 @@ class _EventScreenState extends State<EventScreen> {
               ),
             ),
             Container(
-                height: 550,
-                // width: MediaQuery.of(context).size.width,
-                child: Container(
-                    padding: EdgeInsets.only(left: 60),
-                    child: gridViewEvent(_pastEvents))),
+              height: 550,
+              // width: MediaQuery.of(context).size.width,
+              child: Container(
+                padding: EdgeInsets.only(left: 60),
+                child: !isPressed
+                    ? gridViewEvent(_pastEvents)
+                    : Center(
+                      child: Text(
+                          'Corona corrupted the System.fun.year("2020") brother. Meet you soon in 2021.....',
+                          style: GoogleFonts.trykker(fontWeight: FontWeight.w100,
+                              fontSize: 60, color: Color(0xff9E9E9E)),
+                        ),
+                    ),
+              ),
+            ),
           ],
         ),
       ),
