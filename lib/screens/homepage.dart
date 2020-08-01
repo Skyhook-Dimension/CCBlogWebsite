@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
 import '../appBarr.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -14,7 +15,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     double cWidth = MediaQuery.of(context).size.width * 0.36;
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Color(0xFF181818),
       appBar: appBarr(context),
       body: SingleChildScrollView(
         child: Column(
@@ -501,6 +502,316 @@ class _HomeScreenState extends State<HomeScreen> {
                   SizedBox(
                     height: 56,
                   ),
+                  Container(
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: 90,
+                          margin: EdgeInsets.only(left: 100, top: 30),
+                          child: Image.asset(
+                            'assets/images/CCFooter.png',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 270,
+                        ),
+                        Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    child: Text(
+                                      'Links',
+                                      style: GoogleFonts.notoSans(
+                                        textStyle: Theme.of(context)
+                                            .textTheme
+                                            .headline4,
+                                        color: Color(0xFFF2F2F2),
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w700,
+                                        //letterSpacing: -5,
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                      left: 20,
+                                    ),
+                                    height: 2,
+                                    width: 61,
+                                    color: Color(0xFF602080),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 24,
+                              ),
+                              Container(
+                                child: Text(
+                                  'Home',
+                                  style: GoogleFonts.notoSans(
+                                    textStyle:
+                                        Theme.of(context).textTheme.headline4,
+                                    color: Color(0xFFF2F2F2),
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w400,
+                                    //letterSpacing: -5,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Text(
+                                  'Events',
+                                  style: GoogleFonts.notoSans(
+                                    textStyle:
+                                        Theme.of(context).textTheme.headline4,
+                                    color: Color(0xFFF2F2F2),
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w400,
+                                    //letterSpacing: -5,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Text(
+                                  'Projects',
+                                  style: GoogleFonts.notoSans(
+                                    textStyle:
+                                        Theme.of(context).textTheme.headline4,
+                                    color: Color(0xFFF2F2F2),
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w400,
+                                    //letterSpacing: -5,
+                                  ),
+                                ),
+                              ),
+                              Container(
+                                child: Text(
+                                  'Members',
+                                  style: GoogleFonts.notoSans(
+                                    textStyle:
+                                        Theme.of(context).textTheme.headline4,
+                                    color: Color(0xFFF2F2F2),
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.w400,
+                                    //letterSpacing: -5,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 32,
+                        ),
+                        Container(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    child: Text(
+                                      'Contact',
+                                      style: GoogleFonts.notoSans(
+                                        textStyle: Theme.of(context)
+                                            .textTheme
+                                            .headline4,
+                                        color: Color(0xFFF2F2F2),
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.w700,
+                                        //letterSpacing: -5,
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.only(
+                                      left: 20,
+                                    ),
+                                    height: 2,
+                                    width: 61,
+                                    color: Color(0xFF602080),
+                                  ),
+                                ],
+                              ),
+                              SizedBox(
+                                height: 24,
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    child: Text(
+                                      'Email',
+                                      style: GoogleFonts.notoSans(
+                                        textStyle: Theme.of(context)
+                                            .textTheme
+                                            .headline4,
+                                        color: Color(0xFFF2F2F2),
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w700,
+                                        //letterSpacing: -5,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 39,
+                                  ),
+                                  Container(
+                                    child: Text(
+                                      ': codingclub@iiitvadodara.ac.in',
+                                      style: GoogleFonts.notoSans(
+                                        textStyle: Theme.of(context)
+                                            .textTheme
+                                            .headline4,
+                                        color: Color(0xFFF2F2F2),
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        //letterSpacing: -5,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: [
+                                  Container(
+                                    child: Text(
+                                      'Phone',
+                                      style: GoogleFonts.notoSans(
+                                        textStyle: Theme.of(context)
+                                            .textTheme
+                                            .headline4,
+                                        color: Color(0xFFF2F2F2),
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w700,
+                                        //letterSpacing: -5,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 31,
+                                  ),
+                                  Container(
+                                    child: Text(
+                                      ': +98875503111 ,9034534472',
+                                      style: GoogleFonts.notoSans(
+                                        textStyle: Theme.of(context)
+                                            .textTheme
+                                            .headline4,
+                                        color: Color(0xFFF2F2F2),
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        //letterSpacing: -5,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    child: Text(
+                                      'Address',
+                                      style: GoogleFonts.notoSans(
+                                        textStyle: Theme.of(context)
+                                            .textTheme
+                                            .headline4,
+                                        color: Color(0xFFF2F2F2),
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.w700,
+                                        //letterSpacing: -5,
+                                      ),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    width: 15,
+                                  ),
+                                  Container(
+                                    width: 357,
+                                    child: Text(
+                                      ': c/o Block No9 ,Government Engineering College,Sector 28,Gandhinagar,Gujarat ',
+                                      style: GoogleFonts.notoSans(
+                                        textStyle: Theme.of(context)
+                                            .textTheme
+                                            .headline4,
+                                        color: Color(0xFFF2F2F2),
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.w400,
+                                        //letterSpacing: -5,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                        SizedBox(
+                          width: 54,
+                        ),
+                        Container(
+                          child: Column(
+                            children: [
+                              Container(
+                                height: 80,
+                                width: 2,
+                                color: Color(0xFF602080),
+                              ),
+                              SizedBox(
+                                height: 22,
+                              ),
+                              Container(
+                                width: 26,
+                                height: 26,
+                                child: SignInButton(
+                                  Buttons.LinkedIn,
+                                  text: "",
+                                  mini: true,
+                                  onPressed: () {},
+                                ),
+                              ),
+                              SizedBox(
+                                height: 12,
+                              ),
+                              Container(
+                                width: 26,
+                                height: 26,
+                                child: SignInButton(
+                                  Buttons.Facebook,
+                                  text: "",
+                                  mini: true,
+                                  onPressed: () {},
+                                ),
+                              ),
+                              SizedBox(
+                                height: 12,
+                              ),
+                              Container(
+                                width: 26,
+                                height: 26,
+                                child: SignInButton(
+                                  Buttons.Twitter,
+                                  text: "",
+                                  mini: true,
+                                  onPressed: () {},
+                                ),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
+                  ),
                   Stack(alignment: Alignment.center, children: <Widget>[
                     Container(
                       height: 98,
@@ -509,7 +820,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         gradient: LinearGradient(
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
-                          stops: [0.0, 0.5, 1],
+                          stops: [0.3, 0.5, 0.7],
                           colors: [
                             Color(0xFF181818),
                             Color(0xFF383838),
@@ -533,11 +844,18 @@ class _HomeScreenState extends State<HomeScreen> {
                             ),
                           ),
                           SizedBox(
-                            width: 55,
+                            width: 7,
+                          ),
+                          Container(
+                            height: 50,
+                            child: Image.asset(
+                              'assets/images/DOT.png',
+                              fit: BoxFit.cover,
+                            ),
                           ),
                           Container(
                             margin: EdgeInsets.only(
-                              left: 57,
+                              left: 20,
                             ),
                             height: 40,
                             width: 2,
@@ -554,6 +872,16 @@ class _HomeScreenState extends State<HomeScreen> {
                               fontSize: 24,
                               fontWeight: FontWeight.w300,
                               //letterSpacing: -5,
+                            ),
+                          ),
+                          SizedBox(
+                            width: 7,
+                          ),
+                          Container(
+                            height: 50,
+                            child: Image.asset(
+                              'assets/images/CC-Logo.png',
+                              fit: BoxFit.cover,
                             ),
                           ),
                         ],

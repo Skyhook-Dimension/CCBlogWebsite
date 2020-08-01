@@ -14,14 +14,14 @@ Widget appBarr(BuildContext context) {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Container(
-            height: 62,
+            height: 50,
             child: Image.asset(
               'assets/images/CC-Logo.png',
               fit: BoxFit.cover,
             ),
             padding: EdgeInsets.only(
               right: 5,
-              top: 5,
+              top: 2,
             ),
           ),
           Column(
