@@ -819,7 +819,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
+                          end: Alignment.centerRight, 
                           stops: [0.3, 0.5, 0.7],
                           colors: [
                             Color(0xFF181818),
