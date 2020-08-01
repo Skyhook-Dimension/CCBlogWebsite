@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'package:mywebapp/widgets/gridview.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:dots_indicator/dots_indicator.dart';
 
 import '../widgets/appBarr.dart';
 import '../widgets/carousel.dart';
@@ -15,7 +14,6 @@ class EventScreen extends StatefulWidget {
 }
 
 class _EventScreenState extends State<EventScreen> {
-  double _currentIndex = 0;
   List<Widget> carouselList = [];
   List<Map<String, String>> _pastEvents = [
     {
@@ -34,23 +32,51 @@ class _EventScreenState extends State<EventScreen> {
       'image': 'assets/images/intro.png'
     }
   ];
-  List<Map<String, String>> _events = [
+  List<Map<String, dynamic>> _events = [
     {
-      'title': 'Github Introduction Workshop',
+      'title': 'GITHUB INTRODUCTION WORKSHOP',
       'date': '20 June',
-      'imageUrl': 'assets/images/github_introduction.png'
+      'imageUrl': 'assets/images/github_introduction.png',
+      'info':
+          'A github introduction for beginners to learn about git version control system and its benefits',
+      'location': 'LH1, Sabar Campus',
+      'time': '4 pm',
+      'duration': '2 hrs',
+      'Speakers': ['Ashutosh Rathi', 'Monal Shadi'],
+      'SkillLevel': 1,
+      'prerequisite': ['None'],
+      'requirements': ['Laptop with git installed'],
+      'Poweredby': 'assets/images/github_symbol.png'
     },
     {
-      'title': 'Bit-set-Go Coding contest',
+      'title': 'BIT-SET-GO CODING CONTEST',
       'date': '30 July',
-      'imageUrl': 'assets/images/bitset_go.png'
+      'imageUrl': 'assets/images/bitset_go.png',
+      'info':
+          'A workshop with motive to help you solve Bit-set-go contest\'s question',
+      'location': 'LH2, Sabar Campus',
+      'time': '6 pm',
+      'duration': '3 hrs',
+      'Speakers': ['Pushkar Patel', 'Aman Raj'],
+      'SkillLevel': 1,
+      'prerequisite': ['None'],
+      'requirements': ['Laptop and WILL to learn']
     },
     {
-      'title': 'Objective C Backend workshop',
+      'title': 'OBJECTIVE C BACKEND WORKSHOP',
       'date': '20 August',
-      'imageUrl': 'assets/images/objective-C.png'
+      'imageUrl': 'assets/images/objective-C.png',
+      'info': 'Help you learn Objective C',
+      'location': 'LH1, Sabar Campus',
+      'time': '10 am',
+      'duration': '5 hrs',
+      'Speakers': ['ABC'],
+      'SkillLevel': 2,
+      'prerequisite': ['oops basics'],
+      'requirements': ['Laptop']
     }
   ];
+  bool isPressed = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -71,26 +97,26 @@ class _EventScreenState extends State<EventScreen> {
                   bottom: -300,
                   left: -53,
                   width: double.maxFinite,
-                  child: Flex(direction: Axis.horizontal, children: [
-                    Expanded(
-                      child: Text(
-                        'CODING',
-                        softWrap: false,
-                        maxLines: 1,
-                        overflow: TextOverflow.clip,
-                        style: GoogleFonts.josefinSans(
-                          fontSize: 400,
-                          fontWeight: FontWeight.bold,
-                          color: Color.fromRGBO(22, 22, 22, 1),
+                  child: Flex(
+                    direction: Axis.horizontal,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          'CODING',
+                          softWrap: false,
+                          maxLines: 1,
+                          overflow: TextOverflow.clip,
+                          style: GoogleFonts.josefinSans(
+                            fontSize: 400,
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromRGBO(22, 22, 22, 1),
+                          ),
                         ),
                       ),
-                    ),
-                  ],),
+                    ],
+                  ),
                 ),
-                
-            Container(child: CarouselWidget(_events)),
-                    
-                  
+                Container(child: CarouselWidget(_events)),
               ],
             ),
             Flex(direction: Axis.horizontal, children: [
@@ -135,14 +161,18 @@ class _EventScreenState extends State<EventScreen> {
                           Radius.circular(100),
                         ),
                       ),
-                      color: Colors.transparent,
+                      color: isPressed ? Colors.transparent : Color(0xff602080),
                       highlightColor: Color.fromRGBO(96, 32, 128, 1),
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          isPressed = false;
+                        });
+                      },
                       child: Text(
                         '2019',
-                        style: GoogleFonts.montserrat(
+                        style: GoogleFonts.sourceSansPro(
                           textStyle:
-                              TextStyle(fontSize: 30, color: Colors.white),
+                              TextStyle(fontSize: 36,fontWeight: FontWeight.bold ,color: Colors.white),
                         ),
                       ),
                     ),
@@ -155,16 +185,18 @@ class _EventScreenState extends State<EventScreen> {
                           Radius.circular(100),
                         ),
                       ),
-                      color: Colors.transparent,
+                      color: isPressed ? Color(0xff602080) : Colors.transparent,
                       highlightColor: Color.fromRGBO(96, 32, 128, 1),
                       onPressed: () {
-                        Text('hello');
+                        setState(() {
+                          isPressed = true;
+                        });
                       },
                       child: Text(
                         '2020',
-                        style: GoogleFonts.montserrat(
+                        style: GoogleFonts.sourceSansPro(
                           textStyle:
-                              TextStyle(fontSize: 30, color: Colors.white),
+                              TextStyle(fontSize: 36,fontWeight: FontWeight.bold ,color: Colors.white),
                         ),
                       ),
                     ),
@@ -173,11 +205,21 @@ class _EventScreenState extends State<EventScreen> {
               ),
             ),
             Container(
-                height: 550,
-                // width: MediaQuery.of(context).size.width,
-                child: Container(
-                    padding: EdgeInsets.only(left: 60),
-                    child: gridViewEvent(_pastEvents))),
+              height: 550,
+              // width: MediaQuery.of(context).size.width,
+              child: Container(
+                padding: EdgeInsets.only(left: 60),
+                child: !isPressed
+                    ? gridViewEvent(_pastEvents)
+                    : Center(
+                      child: Text(
+                          'Corona corrupted the System.fun.year("2020") brother. Meet you soon in 2021.....',
+                          style: GoogleFonts.trykker(fontWeight: FontWeight.w100,
+                              fontSize: 60, color: Color(0xff9E9E9E)),
+                        ),
+                    ),
+              ),
+            ),
           ],
         ),
       ),

@@ -31,6 +31,7 @@ dependencies:
   carousel_slider: ^2.2.1
   dots_indicator: ^1.2.0
   google_fonts: ^1.1.0
+  signal_strength_indicator: ^0.3.0+1
 
 dev_dependencies:
   flutter_test:
@@ -56,6 +57,11 @@ flutter:
     - assets/images/ui_ux.png
     - assets/images/cook.png
     - assets/images/intro.png
+    - assets/images/github_symbol.png
+    - assets/images/iiitvcc.png
+    - assets/images/project.png
+    - assets/images/dotlogo.png
+    
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

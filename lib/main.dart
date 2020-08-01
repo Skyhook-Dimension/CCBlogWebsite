@@ -20,7 +20,9 @@ class MyApp extends StatelessWidget {
         ProjectScreen.routeName: (context) => ProjectScreen(),
         KnowUsScreen.routeName:(context) => KnowUsScreen(),
         ContactScreen.routeName:(context) => ContactScreen(),
-        MemberScreen.routeName:(context )=> MemberScreen()
+        MemberScreen.routeName:(context )=> MemberScreen(),
+        // DetailPageScreen.routeName:(context)=>DetailPageScreen(),
+
       },
       debugShowCheckedModeBanner: false,
       home: HomeScreen(),
