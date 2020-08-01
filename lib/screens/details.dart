@@ -111,7 +111,31 @@ class DetailPageScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              Container(width: 150),
+              Container(
+                width: 270,
+                height: 490,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    SizedBox(
+                      width: 150,
+                      height: 47,
+                      child: FlatButton(
+                        color: Color.fromRGBO(96, 32, 128, 1),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        child: Text(
+                          'Register',
+                          style: GoogleFonts.almarai(
+                              textStyle: TextStyle(color: Colors.white),
+                              fontSize: 25),
+                        ),
+                        onPressed: () {},
+                      ),
+                    ),
+                  ],
+                ),
+              ),
               Container(
                 height: 620,
                 width: 2,
@@ -165,18 +189,20 @@ class DetailPageScreen extends StatelessWidget {
                                   color: Color(0xff602080), fontSize: 32),
                             ),
                             title: Padding(
-                              padding: const EdgeInsets.only(left:32.0),
+                              padding: const EdgeInsets.only(left: 32.0),
                               child: SignalStrengthIndicator.bars(
                                 // radius: ,
                                 activeColor: Color(0xffF2F2F2),
                                 inactiveColor: Colors.grey[800],
-                                value: event["SkillLevel"]/3,
+                                value: event["SkillLevel"] / 3,
                                 size: 60,
                                 barCount: 3,
                                 spacing: 0.1,
                               ),
                             ),
-                            trailing: SizedBox(width: 190,),
+                            trailing: SizedBox(
+                              width: 190,
+                            ),
                           ),
                           SizedBox(
                             height: 50,
@@ -272,122 +298,124 @@ class DetailPageScreen extends StatelessWidget {
             ],
           ),
           Container(
-              height: 270,
-              padding: EdgeInsets.only(left: 350),
-              child: Row(
-                // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text(
-                            '2',
-                            style: GoogleFonts.orbitron(
-                              fontSize: 144,
-                              color: Color(0xff707070),
-                            ),
+            height: 270,
+            padding: EdgeInsets.only(left: 350),
+            child: Row(
+              // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          '2',
+                          style: GoogleFonts.orbitron(
+                            fontSize: 144,
+                            color: Color(0xff707070),
                           ),
-                          Text(
-                            '2',
-                            style: GoogleFonts.orbitron(
-                              fontSize: 144,
-                              color: Color(0xff707070),
-                            ),
-                          ),
-                          Text(
-                            ':',
-                            style: GoogleFonts.orbitron(
-                              fontSize: 144,
-                              color: Color(0xff707070),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        'Days',
-                        style: GoogleFonts.orbitron(
-                          fontSize: 36,
-                          color: Color(0xffA3A3A3),
                         ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          Text(
-                            '2',
-                            style: GoogleFonts.orbitron(
-                              fontSize: 144,
-                              color: Color(0xff707070),
-                            ),
+                        Text(
+                          '2',
+                          style: GoogleFonts.orbitron(
+                            fontSize: 144,
+                            color: Color(0xff707070),
                           ),
-                          Text(
-                            '2',
-                            style: GoogleFonts.orbitron(
-                              fontSize: 144,
-                              color: Color(0xff707070),
-                            ),
-                          ),
-                          Text(
-                            ':',
-                            style: GoogleFonts.orbitron(
-                              fontSize: 144,
-                              color: Color(0xff707070),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        'Hours',
-                        style: GoogleFonts.orbitron(
-                          fontSize: 36,
-                          color: Color(0xffA3A3A3),
                         ),
-                      ),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            '2',
-                            style: GoogleFonts.orbitron(
-                              fontSize: 144,
-                              color: Color(0xff707070),
-                            ),
+                        Text(
+                          ':',
+                          style: GoogleFonts.orbitron(
+                            fontSize: 144,
+                            color: Color(0xff707070),
                           ),
-                          Text(
-                            '2',
-                            style: GoogleFonts.orbitron(
-                              fontSize: 144,
-                              color: Color(0xff707070),
-                            ),
-                          ),
-                        ],
-                      ),
-                      Text(
-                        'Minutes',
-                        style: GoogleFonts.orbitron(
-                          fontSize: 36,
-                          color: Color(0xffA3A3A3),
                         ),
+                      ],
+                    ),
+                    Text(
+                      'Days',
+                      style: GoogleFonts.orbitron(
+                        fontSize: 36,
+                        color: Color(0xffA3A3A3),
                       ),
-                    ],
-                  ),
-                  SizedBox()
-                ],
-              ),),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        Text(
+                          '2',
+                          style: GoogleFonts.orbitron(
+                            fontSize: 144,
+                            color: Color(0xff707070),
+                          ),
+                        ),
+                        Text(
+                          '2',
+                          style: GoogleFonts.orbitron(
+                            fontSize: 144,
+                            color: Color(0xff707070),
+                          ),
+                        ),
+                        Text(
+                          ':',
+                          style: GoogleFonts.orbitron(
+                            fontSize: 144,
+                            color: Color(0xff707070),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      'Hours',
+                      style: GoogleFonts.orbitron(
+                        fontSize: 36,
+                        color: Color(0xffA3A3A3),
+                      ),
+                    ),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          '2',
+                          style: GoogleFonts.orbitron(
+                            fontSize: 144,
+                            color: Color(0xff707070),
+                          ),
+                        ),
+                        Text(
+                          '2',
+                          style: GoogleFonts.orbitron(
+                            fontSize: 144,
+                            color: Color(0xff707070),
+                          ),
+                        ),
+                      ],
+                    ),
+                    Text(
+                      'Minutes',
+                      style: GoogleFonts.orbitron(
+                        fontSize: 36,
+                        color: Color(0xffA3A3A3),
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox()
+              ],
+            ),
+          ),
           Padding(
-            padding: const EdgeInsets.only(bottom:64.0),
+            padding: const EdgeInsets.only(bottom: 64.0),
             child: Center(
               child: RaisedButton(
-                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(11)),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(11)),
                 onPressed: () {},
                 color: Color(0xff602080),
                 child: Text(
