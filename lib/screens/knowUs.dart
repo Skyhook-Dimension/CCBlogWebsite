@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../appBarr.dart';
+import '../widgets/appBarr.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class KnowUsScreen extends StatelessWidget {

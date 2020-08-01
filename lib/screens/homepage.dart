@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import '../appBarr.dart';
+import 'package:mywebapp/screens/knowUs.dart';
+import '../widgets/appBarr.dart';
 
 class HomeScreen extends StatefulWidget {
   static const routeName = '/homeScreen';
@@ -68,7 +69,10 @@ class _HomeScreenState extends State<HomeScreen> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               FlatButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.of(context)
+                                      .pushNamed(KnowUsScreen.routeName);
+                                },
                                 //color: Color(0xFFF638DC),
                                 shape: new RoundedRectangleBorder(
                                   borderRadius: new BorderRadius.circular(30.0),
@@ -312,7 +316,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             child: Stack(
                               children: <Widget>[
                                 Container(
-                                  width: 365,
+                                  width: 345,
                                   height: 337,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.only(
@@ -321,7 +325,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   )),
                                   child: Image.asset(
                                     'assets/images/linux.jpg',
-                                    width: 365,
+                                    width: 345,
                                     //height: 585,
                                     fit: BoxFit.cover,
                                   ),
@@ -330,7 +334,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   bottom: 0,
                                   child: Container(
                                     height: 75,
-                                    width: 365,
+                                    width: 345,
                                     color: Color(0xFF602080),
                                   ),
                                 ),
@@ -819,7 +823,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
                           begin: Alignment.centerLeft,
-                          end: Alignment.centerRight, 
+                          end: Alignment.centerRight,
                           stops: [0.3, 0.5, 0.7],
                           colors: [
                             Color(0xFF181818),

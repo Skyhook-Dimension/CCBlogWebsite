@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import '../appBarr.dart';
+import '../widgets/appBarr.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class PastEventsScreen extends StatelessWidget {

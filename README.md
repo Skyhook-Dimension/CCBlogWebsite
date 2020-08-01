@@ -1,6 +1,6 @@
-# IIITV Coding Club Website(Unofficial)
+# mywebapp
 
-This website is getting created on flutter web.
+A new Flutter project.
 
 ## Contributers of this project
 1. Monikinderjit Singh
