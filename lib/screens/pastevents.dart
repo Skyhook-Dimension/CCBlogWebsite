@@ -27,15 +27,16 @@ class PastEventsScreen extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 620),
                       child: Center(
                         child: ClipOval(
-                          child: Container(
-                            child: Center(
+                          child:FlatButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: CircleAvatar(
                                 child: Icon(
                               Icons.arrow_back,
                               size: 30,
-                            )),
-                            height: 48,
-                            width: 48,
-                            color: Color(0xff602080),
+                            ),
+                            backgroundColor: Color(0xff602080),),
                           ),
                         ),
                       ),
@@ -62,46 +63,25 @@ class PastEventsScreen extends StatelessWidget {
                         //rich txt
                         Row(
                             crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                          
-                          Text(
-                            '8',
-                           style: GoogleFonts.montserrat(
+                            children: [
+                              Text(
+                                '8',
+                                style: GoogleFonts.montserrat(
                                   fontSize: 48,
                                   color: Color(0xffF2F2F2),
                                   fontWeight: FontWeight.w500,
                                 ),
-                          ),
-                          Text(
-                            ' April',
-                                style: GoogleFonts.montserrat(
-                                  fontSize: 44,
-                                  color: Color(0xff602080),
-                                  fontWeight: FontWeight.w300,
-                                ),
-                          )
-                        ]),
-                        /*RichText(
-                            text: TextSpan(
-                                style: DefaultTextStyle.of(context).style,
-                                children: [
-                                   TextSpan(
-                                text: '8',
-                                style: GoogleFonts.montserrat(
-                                  fontSize: 48,
-                                  color: Color(0xffF2F2F2),
-                                  fontWeight: FontWeight.w700,
-                                ),
                               ),
-                              TextSpan(
-                                text: ' April',
+                              Text(
+                                ' April',
                                 style: GoogleFonts.montserrat(
                                   fontSize: 44,
                                   color: Color(0xff602080),
                                   fontWeight: FontWeight.w300,
                                 ),
                               )
-                            ])),*/
+                            ]),
+
                         SizedBox(height: 50, width: 600),
                         Container(
                           width: 610,
@@ -350,7 +330,7 @@ class PastEventsScreen extends StatelessWidget {
                 ]),
               ),
 
-              Container(height: 110)
+              Container(height: 110),
             ],
           ),
         ),

@@ -716,15 +716,14 @@ class KnowUsScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                  
-                     Text(
-                                                 'Designed by DOT',
-                                              style: GoogleFonts.montserrat(
-                                                  fontWeight: FontWeight.w400,
-                                                   fontSize: 30,
-                                              color: Color(0xffF2F2F2),
-                                                ),
-                                            ),
+                      Text(
+                        'Designed by DOT',
+                        style: GoogleFonts.montserrat(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 30,
+                          color: Color(0xffF2F2F2),
+                        ),
+                      ),
                       SizedBox(width: 20),
                       Container(
                         height: 64,

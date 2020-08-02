@@ -16,6 +16,7 @@ class ProjectScreen extends StatelessWidget {
     {'title': 'abcde', 'subtitle': "Excellent Project", 'isFeatured': true},
     {'title': 'abcde', 'subtitle': "Excellent Project", 'isFeatured': true},
   ];
+
   final dynamic imageDest = 'assets/images/project.png';
   @override
   Widget build(BuildContext context) {
@@ -210,84 +211,80 @@ class ProjectScreen extends StatelessWidget {
                         child: Padding(
                           padding: const EdgeInsets.only(bottom: 50.0),
                           child: GridView.builder(
-                              shrinkWrap: true,
-                              gridDelegate:
-                                  SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 2,
-                                crossAxisSpacing: 5.0,
-                                mainAxisSpacing: 5.0,
-                                childAspectRatio: 500 / 280,
-                              ),
-                              itemCount: project.length,
-                              itemBuilder: (ctx, index) {
-                                if (index >= project.length) return null;
-                                return Card(
+                            shrinkWrap: true,
+                            gridDelegate:
+                                SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 5.0,
+                              mainAxisSpacing: 5.0,
+                              childAspectRatio: 500 / 280,
+                            ),
+                            itemCount: project.length,
+                            itemBuilder: (ctx, index) {
+                              if (index >= project.length) return null;
+                              return Card(
+                                color: Color(0xff602080),
+                                elevation: 30,
+                                shape: RoundedRectangleBorder(
+                                    borderRadius: BorderRadius.circular(26)),
+                                child: Container(
+                                  height: 300,
+                                  width: 410,
                                   color: Color(0xff602080),
-                                  elevation: 30,
-                                  shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(26)),
-                                  child: Container(
-                                    height: 300,
-                                    width: 410,
-                                    color: Color(0xff602080),
-                                    child: Stack(
-                                      children: [
-                                        Positioned(
-                                          right: -40,
-                                          top: -180,
-                                          child: Image.asset(
-                                              'assets/images/project.png',
-                                              fit: BoxFit.fill,
-                                              scale: 1.6),
-                                        ),
+                                  child: Stack(
+                                    children: [
+                                      Positioned(
+                                        right: -40,
+                                        top: -180,
+                                        child: Image.asset(
+                                            'assets/images/project.png',
+                                            fit: BoxFit.fill,
+                                            scale: 1.6),
+                                      ),
 
-                                        Padding(
-                                          padding:
-                                              const EdgeInsets.only(top: 223.0),
-                                          child: Container(
-                                            decoration: BoxDecoration(
-                                              color: Color(0xff602080),
+                                      Padding(
+                                        padding:
+                                            const EdgeInsets.only(top: 223.0),
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: Color(0xff602080),
+                                            borderRadius: BorderRadius.only(
+                                              bottomLeft: Radius.circular(40),
+                                              bottomRight: Radius.circular(26),
+                                            ),
+                                          ),
+                                          // color: Color(0xff602080),
+                                          height: 80,
+                                          child: ListTile(
+                                            shape: RoundedRectangleBorder(
                                               borderRadius: BorderRadius.only(
                                                 bottomLeft: Radius.circular(40),
                                                 bottomRight:
                                                     Radius.circular(26),
                                               ),
                                             ),
-                                            // color: Color(0xff602080),
-                                            height: 80,
-                                            child: ListTile(
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius: BorderRadius.only(
-                                                  bottomLeft:
-                                                      Radius.circular(40),
-                                                  bottomRight:
-                                                      Radius.circular(26),
-                                                ),
-                                              ),
-                                              title: Text(
-                                                  project[index]['title'],
-                                                  style: GoogleFonts.notoSans(
-                                                    color: Colors.white,
-                                                    fontSize: 24,
-                                                    fontWeight: FontWeight.bold,
-                                                  )),
-                                              subtitle: Text(
-                                                  project[index]['subtitle'],
-                                                  style:
-                                                      GoogleFonts.sourceSansPro(
-                                                    color: Colors.white,
-                                                    fontSize: 18,
-                                                  )),
-                                            ),
+                                            title: Text(project[index]['title'],
+                                                style: GoogleFonts.notoSans(
+                                                  color: Colors.white,
+                                                  fontSize: 24,
+                                                  fontWeight: FontWeight.bold,
+                                                )),
+                                            subtitle: Text(
+                                                project[index]['subtitle'],
+                                                style:
+                                                    GoogleFonts.sourceSansPro(
+                                                  color: Colors.white,
+                                                  fontSize: 18,
+                                                )),
                                           ),
                                         ),
-                                        //   ),
-                                        // ),
-                                      ],
-                                    ),
+                                      ),
+                                    ],
                                   ),
-                                );
-                              }),
+                                ),
+                              );
+                            },
+                          ),
                         ),
                       ),
                     ],
