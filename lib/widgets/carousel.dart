@@ -82,13 +82,27 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                           Padding(
                                             padding: const EdgeInsets.only(
                                                 left: 100.0),
-                                            child: Text(
-                                              event['date'],
-                                              style: GoogleFonts.lato(
-                                                  textStyle: TextStyle(
-                                                      color: Colors.white),
-                                                  fontSize: 45),
-                                              textAlign: TextAlign.end,
+                                            child: RichText(
+                                              text:
+                                                  TextSpan(children: <TextSpan>[
+                                                TextSpan(
+                                                  text: event['date']
+                                                      .substring(0, 2),
+                                                  style:
+                                                      GoogleFonts.sourceSansPro(
+                                                          color: Colors.white,
+                                                          fontSize: 45,),
+                                                ),
+                                                TextSpan(
+                                                  text: event['date'].substring(
+                                                      2, event['date'].length),
+                                                  style:
+                                                      GoogleFonts.sourceSansPro(
+                                                          color:
+                                                              Color(0xff602080),
+                                                          fontSize: 45),
+                                                ),
+                                              ]),
                                             ),
                                           ),
                                         ],
@@ -146,9 +160,14 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                                 //   DetailPageScreen.routeName,
                                                 //   arguments: DetailsOfEvent(widget.events[currentIndex.toInt()]),
                                                 // );
-                                                Navigator.of(context).push(
-                                                  MaterialPageRoute(builder: (context)=>DetailPageScreen(widget.events[currentIndex.toInt()],),)
-                                                );
+                                                Navigator.of(context)
+                                                    .push(MaterialPageRoute(
+                                                  builder: (context) =>
+                                                      DetailPageScreen(
+                                                    widget.events[
+                                                        currentIndex.toInt()],
+                                                  ),
+                                                ));
                                               },
                                             ),
                                           ),

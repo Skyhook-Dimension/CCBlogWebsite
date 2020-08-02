@@ -6,7 +6,6 @@ class DetailPageScreen extends StatelessWidget {
   final Map<String, dynamic> event;
   DetailPageScreen(this.event);
   static const routeName = '/DetailsPageScreen';
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,11 +52,27 @@ class DetailPageScreen extends StatelessWidget {
                           SizedBox(
                             height: 10,
                           ),
-                          Text(
-                            event['date'],
-                            style: GoogleFonts.sourceSansPro(
-                                color: Colors.white, fontSize: 45),
+                          RichText(
+                            text: TextSpan(children: <TextSpan>[
+                              TextSpan(
+                                text: event['date'].substring(0, 2),
+                                style: GoogleFonts.sourceSansPro(
+                                    color: Colors.white, fontSize: 45),
+                              ),
+                              TextSpan(
+                                  text: event['date'].substring(
+                                2,
+                                event['date'].length),
+                                style: GoogleFonts.sourceSansPro(
+                                    color: Color(0xff602080), fontSize: 45),
+                              ),
+                            ]),
                           ),
+                          // Text(
+                          //   event['date'],
+                          //   style: GoogleFonts.sourceSansPro(
+                          //       color: Colors.white, fontSize: 45),
+                          // ),
                           SizedBox(
                             height: 20,
                           ),
@@ -89,7 +104,7 @@ class DetailPageScreen extends StatelessWidget {
                             event['duration'],
                             style: GoogleFonts.montserrat(
                               color: Color(0xff602080),
-                              fontSize: 24,
+                              fontSize: 28,
                             ),
                           ),
                         ],
@@ -99,12 +114,12 @@ class DetailPageScreen extends StatelessWidget {
                       child: Align(
                         alignment: Alignment.bottomLeft,
                         child: Padding(
-                            padding: EdgeInsets.only(left: 50),
+                          padding: EdgeInsets.only(left: 50),
                           // padding: const EdgeInsets.all(8.0),
                           child: CircleAvatar(
                             radius: 20,
                             backgroundColor: Color(0xff602080),
-                                                    child: IconButton(
+                            child: IconButton(
                               icon: Icon(Icons.arrow_back, color: Colors.black),
                               iconSize: 25,
                               onPressed: () {
