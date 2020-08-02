@@ -22,7 +22,7 @@
   <li>flutter run -d chrome</li>
  </ol>
  
- ## Built With
+ ## Built With :sunglasses:
  <ul>
   <li>Flutter - The frontend framework used</li>
  </ul>
