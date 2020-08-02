@@ -4,6 +4,7 @@
 
 <p>This is a blogging website of Coding Club of IIITV. This website can be used to post blogs, sharing information of upcoming events, showcasing of projects in iiitv org  and viewing the members of Coding Club of IIITV.</p>
 <p>Screenshots of this project can be viewed from the <a href="https://github.com/Chirag-Mathur/CCBlogWebsite-unofficial-/tree/master/Screenshots">Screenshots folder</a> in the repo :smile:</p>
+<p><a href="https://www.figma.com/file/5aLa8I7PiRdc25UrB1cL3e/CC-BLOG-Website">Figma Design Link</a></p>
 
 ### Prerequisites
 <ul>
@@ -29,10 +30,13 @@
 
 ## Made with :heart: by
 <ul>
-  <li><a href="https://github.com/Monik09">Monikinderjeet Singh</a></li>
+  <li><a href="https://github.com/Monik09">Monikinderjit Singh</a></li>
   <li><a href="https://github.com/Chirag-Mathur">Chirag Mathur</a></li>
   <li><a href="https://github.com/vikiwarrior">Vikrant Kumar</a></li>
 </ul>
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
 
 ## Disclaimer
 This is an unofficial project created by students of IIITV. This project is not associalted with IIITV Coding Club or DOT Club.
