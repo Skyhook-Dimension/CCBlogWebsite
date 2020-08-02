@@ -3,26 +3,23 @@ import '../screens/events_screen.dart';
 import '../screens/project_screen.dart';
 import '../screens/contact.dart';
 import '../screens/homepage.dart';
-import '../screens/members.dart';
+import '../screens/knowUs.dart';
 // import 'screens/knowUs.dart';
 
 Widget appBarr(BuildContext context) {
   return AppBar(
     title: Container(
-      padding: EdgeInsets.only(top: 5),
+      height: 60,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          Container(
-            height: 62,
+          CircleAvatar(
             child: Image.asset(
               'assets/images/CC-Logo.png',
-              fit: BoxFit.cover,
+              fit: BoxFit.scaleDown,
             ),
-            padding: EdgeInsets.only(
-              right: 5,
-              top: 5,
-            ),
+            radius: 28,
+            backgroundColor: Colors.transparent,
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -48,76 +45,75 @@ Widget appBarr(BuildContext context) {
       ),
     ),
     actions: [
-      FlatButton(
-        onPressed: () {
-          Navigator.pushNamed(context, HomeScreen.routeName);
-        },
-        child: Text(
-          'Home',
-          style: TextStyle(
-            color: Color(0xFFF638DC),
-            fontSize: 24,
+      Flexible(
+        child: FlatButton(
+          onPressed: () {
+            Navigator.pushNamed(context, HomeScreen.routeName);
+          },
+          child: Text(
+            'Home',
+            style: TextStyle(
+              color: Color(0xFFF638DC),
+              fontSize: 24,
+            ),
           ),
         ),
       ),
-      // FlatButton(
-      //   onPressed: () {
-      //     Navigator.pushNamed(context, KnowUsScreen.routeName);
-      //   },
-      //   child: Text(
-      //     'Know Us',
-      //     style: TextStyle(
-      //       color: Color(0xFFF638DC),
-      //       fontSize: 24,
-      //     ),
-      //   ),
-      // ),
-      FlatButton(
-        onPressed: () {
-          Navigator.pushNamed(context, EventScreen.routeName);
-        },
-        child: Text(
-          'Events',
-          style: TextStyle(
-            color: Color(0xFFF638DC),
-            fontSize: 24,
+      Flexible(
+        child: FlatButton(
+          onPressed: () {
+            Navigator.pushNamed(context, EventScreen.routeName);
+          },
+          child: Text(
+            'Events',
+            style: TextStyle(
+              color: Color(0xFFF638DC),
+              fontSize: 24,
+            ),
           ),
         ),
       ),
-      FlatButton(
-        onPressed: () {
-          Navigator.pushNamed(context, ProjectScreen.routeName);
-        },
-        child: Text(
-          'Projects',
-          style: TextStyle(
-            color: Color(0xFFF638DC),
-            fontSize: 24,
-          ),
-        ),
-        padding: EdgeInsets.only(right: 20),
-      ),
-       FlatButton(
-        onPressed: () {
-          Navigator.pushNamed(context, MemberScreen.routeName);
-        },
-        child: Text(
-          'Members',
-          style: TextStyle(
-            color: Color(0xFFF638DC),
-            fontSize: 24,
+      Flexible(
+        child: FlatButton(
+          onPressed: () {
+            Navigator.pushNamed(context, ProjectScreen.routeName);
+          },
+          child: Text(
+            'Projects',
+            softWrap: true,
+            style: TextStyle(
+              color: Color(0xFFF638DC),
+              fontSize: 24,
+            ),
           ),
         ),
       ),
-      FlatButton(
-        onPressed: () {
-          Navigator.pushNamed(context, ContactScreen.routeName);
-        },
-        child: Text(
-          'Contact Us',
-          style: TextStyle(
-            color: Color(0xFFF638DC),
-            fontSize: 24,
+      // SizedBox(width: 10,),
+      Flexible(
+        child: FlatButton(
+          onPressed: () {
+            Navigator.pushNamed(context, KnowUsScreen.routeName);
+          },
+          child: Text(
+            'Members',
+            style: TextStyle(
+              color: Color(0xFFF638DC),
+              fontSize: 24,
+            ),
+          ),
+        ),
+      ),
+      Flexible(
+        child: FlatButton(
+          onPressed: () {
+            Navigator.pushNamed(context, ContactScreen.routeName);
+          },
+          child: Text(
+            'Contact Us',
+            style: TextStyle(
+              color: Color(0xFFF638DC),
+              fontSize: 24,
+            ),
           ),
         ),
       ),

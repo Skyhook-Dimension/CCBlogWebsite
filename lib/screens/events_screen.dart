@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mywebapp/screens/pastevents.dart';
 
 import 'package:mywebapp/widgets/gridview.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -171,8 +172,10 @@ class _EventScreenState extends State<EventScreen> {
                       child: Text(
                         '2019',
                         style: GoogleFonts.sourceSansPro(
-                          textStyle:
-                              TextStyle(fontSize: 36,fontWeight: FontWeight.bold ,color: Colors.white),
+                          textStyle: TextStyle(
+                              fontSize: 36,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
                         ),
                       ),
                     ),
@@ -195,8 +198,10 @@ class _EventScreenState extends State<EventScreen> {
                       child: Text(
                         '2020',
                         style: GoogleFonts.sourceSansPro(
-                          textStyle:
-                              TextStyle(fontSize: 36,fontWeight: FontWeight.bold ,color: Colors.white),
+                          textStyle: TextStyle(
+                              fontSize: 36,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white),
                         ),
                       ),
                     ),
@@ -210,14 +215,21 @@ class _EventScreenState extends State<EventScreen> {
               child: Container(
                 padding: EdgeInsets.only(left: 60),
                 child: !isPressed
-                    ? gridViewEvent(_pastEvents)
+                    ? FlatButton(
+                        onPressed: () {
+                          Navigator.of(context)
+                              .pushNamed(PastEventsScreen.routeName);
+                        },
+                        child: gridViewEvent(_pastEvents))
                     : Center(
-                      child: Text(
+                        child: Text(
                           'Corona corrupted the System.fun.year("2020") brother. Meet you soon in 2021.....',
-                          style: GoogleFonts.trykker(fontWeight: FontWeight.w100,
-                              fontSize: 60, color: Color(0xff9E9E9E)),
+                          style: GoogleFonts.trykker(
+                              fontWeight: FontWeight.w100,
+                              fontSize: 60,
+                              color: Color(0xff9E9E9E)),
                         ),
-                    ),
+                      ),
               ),
             ),
           ],
