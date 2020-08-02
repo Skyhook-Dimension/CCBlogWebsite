@@ -23,6 +23,7 @@ class MyApp extends StatelessWidget {
         PastEventsScreen.routeName:(context )=>PastEventsScreen()
       },
       debugShowCheckedModeBanner: false,
+      title: "CCBlogWebsite",
       home: HomeScreen(),
     );
   }
