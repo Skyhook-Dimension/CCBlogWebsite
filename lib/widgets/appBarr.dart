@@ -9,7 +9,7 @@ import '../screens/knowUs.dart';
 Widget appBarr(BuildContext context) {
   return AppBar(
     title: Container(
-      height: 60,
+      //height: 60,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -48,7 +48,7 @@ Widget appBarr(BuildContext context) {
       Flexible(
         child: FlatButton(
           onPressed: () {
-            Navigator.pushNamed(context, HomeScreen.routeName);
+           Navigator.popAndPushNamed(context, HomeScreen.routeName);
           },
           child: Text(
             'Home',
@@ -62,7 +62,7 @@ Widget appBarr(BuildContext context) {
       Flexible(
         child: FlatButton(
           onPressed: () {
-            Navigator.pushNamed(context, EventScreen.routeName);
+            Navigator.popAndPushNamed(context, EventScreen.routeName);
           },
           child: Text(
             'Events',
@@ -76,7 +76,7 @@ Widget appBarr(BuildContext context) {
       Flexible(
         child: FlatButton(
           onPressed: () {
-            Navigator.pushNamed(context, ProjectScreen.routeName);
+            Navigator.popAndPushNamed(context, ProjectScreen.routeName);
           },
           child: Text(
             'Projects',
@@ -92,7 +92,7 @@ Widget appBarr(BuildContext context) {
       Flexible(
         child: FlatButton(
           onPressed: () {
-            Navigator.pushNamed(context, KnowUsScreen.routeName);
+            Navigator.popAndPushNamed(context, KnowUsScreen.routeName);
           },
           child: Text(
             'Members',
@@ -103,22 +103,9 @@ Widget appBarr(BuildContext context) {
           ),
         ),
       ),
-      Flexible(
-        child: FlatButton(
-          onPressed: () {
-            Navigator.pushNamed(context, ContactScreen.routeName);
-          },
-          child: Text(
-            'Contact Us',
-            style: TextStyle(
-              color: Color(0xFFF638DC),
-              fontSize: 24,
-            ),
-          ),
-        ),
-      ),
+      
     ],
-    backgroundColor: Colors.black,
+    backgroundColor: Color(0xFF181818),
     elevation: 0,
   );
 }
