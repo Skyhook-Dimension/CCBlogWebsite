@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:mywebapp/responsive_widget.dart';
 import 'package:mywebapp/screens/knowUs.dart';
+import 'package:mywebapp/widgets/appbarrmobile.dart';
+import 'package:mywebapp/widgets/drawerr.dart';
 import '../widgets/appBarr.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -17,7 +20,12 @@ class _HomeScreenState extends State<HomeScreen> {
     double cWidth = MediaQuery.of(context).size.width * 0.36;
     return Scaffold(
       backgroundColor: Color(0xFF181818),
-      appBar: appBarr(context),
+      appBar: ResponsiveWidget.isLargeScreen(context)
+          ? appBarr(context)
+          : appBarrMobile(context),
+      drawer: !(ResponsiveWidget.isLargeScreen(context)) 
+      ? drawerr(context) 
+      : null,
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
