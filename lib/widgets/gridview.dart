@@ -26,7 +26,7 @@ Widget gridViewEvent(List<Map<String, dynamic>> event) {
                   title: Text(
                     event[index]['title'],
                     style: GoogleFonts.robotoSlab(
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w500,
                         fontSize: 30,
                         color: Colors.white),
                   ),

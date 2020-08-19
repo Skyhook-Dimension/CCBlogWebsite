@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import '../screens/events_screen.dart';
 import '../screens/project_screen.dart';
-import '../screens/contact.dart';
 import '../screens/homepage.dart';
 import '../screens/knowUs.dart';
-// import 'screens/knowUs.dart';
 
 Widget drawerr(BuildContext context) {
   return Drawer(

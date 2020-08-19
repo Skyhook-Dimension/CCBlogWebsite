@@ -97,6 +97,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_screenutil:
+    dependency: transitive
+    description:
+      name: flutter_screenutil
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.1.0"
   flutter_signin_button:
     dependency: "direct main"
     description:
@@ -221,6 +228,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "3.0.13"
+  responsive_framework:
+    dependency: "direct main"
+    description:
+      name: responsive_framework
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.8"
+  responsive_widgets:
+    dependency: "direct main"
+    description:
+      name: responsive_widgets
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.1"
   signal_strength_indicator:
     dependency: "direct main"
     description:
