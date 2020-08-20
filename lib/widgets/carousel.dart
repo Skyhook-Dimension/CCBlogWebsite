@@ -58,7 +58,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                               Container(
                                 height:
                                     MediaQuery.of(context).size.height * 0.5,
-                                width: MediaQuery.of(context).size.width / 2,
+                                width: MediaQuery.of(context).size.width *0.52,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
@@ -73,12 +73,12 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
                                         children: [
-                                          Padding(
+                                          Container(
+                                            width: MediaQuery.of(context).size.width*0.4,
                                             padding: const EdgeInsets.only(
-                                                left: 100.0),
+                                                left: 100.0,right: 20),
                                             child: Text(
                                               event['title'],
-                                              softWrap: true,
                                               style: GoogleFonts.montserrat(
                                                   textStyle: TextStyle(
                                                       color: Colors.white),
@@ -86,7 +86,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                                       MediaQuery.of(context)
                                                               .size
                                                               .width *
-                                                          0.045, //64,
+                                                          0.042, //64,
                                                   fontWeight: FontWeight.w300),
                                             ),
                                           ),
@@ -154,7 +154,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          10)),
+                                                          MediaQuery.of(context).size.width*0.01)),
                                               child: Text(
                                                 'Register',
                                                 softWrap: false,
@@ -192,7 +192,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          10)),
+                                                          MediaQuery.of(context).size.width*0.01)),
                                               child: Text(
                                                 'Details',
                                                 softWrap: false,
@@ -251,22 +251,23 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                   }).toList(),
                 ),
               ),
-              Container(
-                color: Colors.black,
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.height * 0.06,
-                child:ResponsiveWidget.isLargeScreen(context)? DotsIndicator(
-                  mainAxisSize: MainAxisSize.max,
-                  dotsCount: widget.events.length,
-                  position: currentIndex,
-                  decorator: DotsDecorator(
-                      color: Color.fromRGBO(121, 121, 121, 1), // Inactive color
-                      activeColor: Color.fromRGBO(96, 32, 128, 1),
-                      activeSize: Size.square(23),
-                      size: Size.square(17),
-                      spacing: EdgeInsets.symmetric(horizontal: 10)),
-                ):null,
-              ),
+              if(ResponsiveWidget.isLargeScreen(context))
+                Container(
+                  color: Colors.black,
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height * 0.06,
+                  child:ResponsiveWidget.isLargeScreen(context)? DotsIndicator(
+                    mainAxisSize: MainAxisSize.max,
+                    dotsCount: widget.events.length,
+                    position: currentIndex,
+                    decorator: DotsDecorator(
+                        color: Color.fromRGBO(121, 121, 121, 1), // Inactive color
+                        activeColor: Color.fromRGBO(96, 32, 128, 1),
+                        activeSize: Size.square(23),
+                        size: Size.square(17),
+                        spacing: EdgeInsets.symmetric(horizontal: 10)),
+                  ):null,
+                ),
             ],
           ),
         ),

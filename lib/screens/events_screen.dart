@@ -2,14 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
-import 'package:mywebapp/screens/pastevents.dart';
-import 'package:mywebapp/widgets/appbarrmobile.dart';
+import './pastevents.dart';
 import '../responsive_widget.dart';
-
-import 'package:mywebapp/widgets/gridview.dart';
-
-import 'package:mywebapp/widgets/drawerr.dart';
+import '../widgets/gridview.dart';
+import '../widgets/drawerr.dart';
 import '../widgets/appBarr.dart';
+import '../widgets/appbarrmobile.dart';
 import '../widgets/carousel.dart';
 
 class EventScreen extends StatefulWidget {
@@ -90,13 +88,13 @@ class _EventScreenState extends State<EventScreen> {
       context,
       height: 1920,
       width: 1080,
-      allowFontScaling: false,
+      allowFontScaling: true,
     );
     return ResponsiveWidgets.builder(
       height: 1920,
       width: 1080,
-      allowFontScaling: false,
-      child:  Scaffold(
+      allowFontScaling: true,
+      child: Scaffold(
         appBar: !ResponsiveWidget.isLargeScreen(context)
             ? appBarrMobile(context)
             : appBarr(context),
@@ -137,7 +135,10 @@ class _EventScreenState extends State<EventScreen> {
                       ],
                     ),
                   ),
-                SizedBox(height:MediaQuery.of(context).size.height*0.69,width:MediaQuery.of(context).size.width,child: CarouselWidget(_events)),
+                  SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.69,
+                      width: MediaQuery.of(context).size.width,
+                      child: CarouselWidget(_events)),
                 ],
               ),
               Flex(direction: Axis.horizontal, children: [
@@ -148,17 +149,20 @@ class _EventScreenState extends State<EventScreen> {
                       leading: CircleAvatar(
                         backgroundColor: Color.fromRGBO(96, 32, 128, 1),
                         // Color(0xff966eaa),
-                        radius: 40,
+                        radius: MediaQuery.of(context).size.width * 0.016,
                         child: Icon(Icons.calendar_today,
-                            color: Colors.white, size: 30),
+                            color: Colors.white,
+                            size: MediaQuery.of(context).size.width * 0.019),
                       ),
-                      title: Padding(
-                        padding: const EdgeInsets.only(left: 23.0),
+                      title: Align(
+                        alignment: Alignment.topLeft,
                         child: Text(
                           "Past Events",
                           style: GoogleFonts.openSans(
-                            textStyle:
-                                TextStyle(fontSize: 40, color: Colors.white),
+                            textStyle: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.029,
+                                color: Colors.white),
                           ),
                         ),
                       ),
@@ -167,7 +171,7 @@ class _EventScreenState extends State<EventScreen> {
                 ),
               ]),
               Container(
-                height: 100,
+                height: MediaQuery.of(context).size.height * 0.16,
                 width: MediaQuery.of(context).size.width,
                 // width: double.infinity,
                 child: Row(
@@ -179,10 +183,12 @@ class _EventScreenState extends State<EventScreen> {
                       child: RaisedButton(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(
-                            Radius.circular(100),
+                            Radius.circular(
+                                MediaQuery.of(context).size.width * 0.030),
                           ),
                         ),
-                        color: isPressed ? Colors.transparent : Color(0xff602080),
+                        color:
+                            isPressed ? Colors.transparent : Color(0xff602080),
                         highlightColor: Color.fromRGBO(96, 32, 128, 1),
                         onPressed: () {
                           setState(() {
@@ -193,8 +199,9 @@ class _EventScreenState extends State<EventScreen> {
                           '2019',
                           style: GoogleFonts.sourceSansPro(
                             textStyle: TextStyle(
-                                fontSize: 36,
-                                fontWeight: FontWeight.bold,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.024,
+                                fontWeight: FontWeight.w600,
                                 color: Colors.white),
                           ),
                         ),
@@ -205,10 +212,12 @@ class _EventScreenState extends State<EventScreen> {
                       child: RaisedButton(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.all(
-                            Radius.circular(100),
+                            Radius.circular(
+                                MediaQuery.of(context).size.width * 0.030),
                           ),
                         ),
-                        color: isPressed ? Color(0xff602080) : Colors.transparent,
+                        color:
+                            isPressed ? Color(0xff602080) : Colors.transparent,
                         highlightColor: Color.fromRGBO(96, 32, 128, 1),
                         onPressed: () {
                           setState(() {
@@ -219,8 +228,9 @@ class _EventScreenState extends State<EventScreen> {
                           '2020',
                           style: GoogleFonts.sourceSansPro(
                             textStyle: TextStyle(
-                                fontSize: 36,
-                                fontWeight: FontWeight.bold,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.024,
+                                fontWeight: FontWeight.w600,
                                 color: Colors.white),
                           ),
                         ),
@@ -230,23 +240,25 @@ class _EventScreenState extends State<EventScreen> {
                 ),
               ),
               Container(
-                height: 550,
+                height: MediaQuery.of(context).size.height * 0.7,
                 // width: MediaQuery.of(context).size.width,
                 child: Container(
-                  padding: EdgeInsets.only(left: 60),
+                  padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width * 0.020),
                   child: !isPressed
                       ? FlatButton(
                           onPressed: () {
                             Navigator.of(context)
                                 .pushNamed(PastEventsScreen.routeName);
                           },
-                          child: gridViewEvent(_pastEvents))
+                          child: gridViewEvent(_pastEvents,context))
                       : Center(
                           child: Text(
                             'Corona corrupted the System.fun.year("2020") brother. Meet you soon in 2021.....',
                             style: GoogleFonts.trykker(
                                 fontWeight: FontWeight.w100,
-                                fontSize: 60,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.020,
                                 color: Color(0xff9E9E9E)),
                           ),
                         ),
