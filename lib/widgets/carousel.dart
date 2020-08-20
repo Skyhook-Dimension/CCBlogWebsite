@@ -74,9 +74,9 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                             MainAxisAlignment.start,
                                         children: [
                                           Container(
-                                            width: MediaQuery.of(context).size.width*0.4,
+                                            width: MediaQuery.of(context).size.width*0.5,
                                             padding: const EdgeInsets.only(
-                                                left: 100.0,right: 20),
+                                                left: 100.0,),
                                             child: Text(
                                               event['title'],
                                               style: GoogleFonts.montserrat(
@@ -240,7 +240,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                 ),
                                 child: Image.asset(
                                   event['imageUrl'],
-                                  fit: BoxFit.cover,
+                                  fit: BoxFit.fitWidth,
                                 ),
                               ),
                             ],
