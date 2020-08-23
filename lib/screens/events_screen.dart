@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:mywebapp/screens/pastevents.dart';
-
-import 'package:mywebapp/widgets/gridview.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:responsive_widgets/responsive_widgets.dart';
 
+import './pastevents.dart';
+import '../responsive_widget.dart';
+import '../widgets/gridview.dart';
+import '../widgets/drawerr.dart';
 import '../widgets/appBarr.dart';
+import '../widgets/appbarrmobile.dart';
 import '../widgets/carousel.dart';
 
 class EventScreen extends StatefulWidget {
@@ -77,162 +80,192 @@ class _EventScreenState extends State<EventScreen> {
       'requirements': ['Laptop']
     }
   ];
+
   bool isPressed = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: appBarr(context),
-      backgroundColor: Color.fromRGBO(27, 27, 27, 1),
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        width: MediaQuery.of(context).size.width,
-        // padding: const EdgeInsets.all(8.0),
-        child: ListView(
-          shrinkWrap: true,
-          children: [
-            Stack(
-              overflow: Overflow.visible,
-              children: [
-                Positioned(
-                  // bottom: 80,
-                  bottom: -300,
-                  left: -53,
-                  width: double.maxFinite,
-                  child: Flex(
-                    direction: Axis.horizontal,
-                    children: [
-                      Expanded(
+    ResponsiveWidgets.init(
+      context,
+      height: 1920,
+      width: 1080,
+      allowFontScaling: true,
+    );
+    return ResponsiveWidgets.builder(
+      height: 1920,
+      width: 1080,
+      allowFontScaling: true,
+      child: Scaffold(
+        appBar: !ResponsiveWidget.isLargeScreen(context)
+            ? appBarrMobile(context)
+            : appBarr(context),
+        drawer:
+            (ResponsiveWidget.isLargeScreen(context)) ? null : drawerr(context),
+        backgroundColor: Color.fromRGBO(27, 27, 27, 1),
+        body: Container(
+          height: MediaQuery.of(context).size.height,
+          width: MediaQuery.of(context).size.width,
+          // padding: const EdgeInsets.all(8.0),
+          child: ListView(
+            shrinkWrap: true,
+            children: [
+              Stack(
+                overflow: Overflow.visible,
+                children: [
+                  Positioned(
+                    // bottom: 80,
+                    bottom: -300,
+                    left: -53,
+                    width: double.maxFinite,
+                    child: Flex(
+                      direction: Axis.horizontal,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            'CODING',
+                            softWrap: false,
+                            maxLines: 1,
+                            overflow: TextOverflow.clip,
+                            style: GoogleFonts.josefinSans(
+                              fontSize: 400,
+                              fontWeight: FontWeight.bold,
+                              color: Color.fromRGBO(22, 22, 22, 1),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                      height: MediaQuery.of(context).size.height * 0.69,
+                      width: MediaQuery.of(context).size.width,
+                      child: CarouselWidget(_events)),
+                ],
+              ),
+              Flex(direction: Axis.horizontal, children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.only(top: 40.0),
+                    child: ListTile(
+                      leading: CircleAvatar(
+                        backgroundColor: Color.fromRGBO(96, 32, 128, 1),
+                        // Color(0xff966eaa),
+                        radius: MediaQuery.of(context).size.width * 0.016,
+                        child: Icon(Icons.calendar_today,
+                            color: Colors.white,
+                            size: MediaQuery.of(context).size.width * 0.019),
+                      ),
+                      title: Align(
+                        alignment: Alignment.topLeft,
                         child: Text(
-                          'CODING',
-                          softWrap: false,
-                          maxLines: 1,
-                          overflow: TextOverflow.clip,
-                          style: GoogleFonts.josefinSans(
-                            fontSize: 400,
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromRGBO(22, 22, 22, 1),
+                          "Past Events",
+                          style: GoogleFonts.openSans(
+                            textStyle: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.029,
+                                color: Colors.white),
                           ),
                         ),
                       ),
-                    ],
-                  ),
-                ),
-                Container(child: CarouselWidget(_events)),
-              ],
-            ),
-            Flex(direction: Axis.horizontal, children: [
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 40.0),
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: Color.fromRGBO(96, 32, 128, 1),
-                      // Color(0xff966eaa),
-                      radius: 40,
-                      child: Icon(Icons.calendar_today,
-                          color: Colors.white, size: 30),
-                    ),
-                    title: Padding(
-                      padding: const EdgeInsets.only(left: 23.0),
-                      child: Text(
-                        "Past Events",
-                        style: GoogleFonts.openSans(
-                          textStyle:
-                              TextStyle(fontSize: 40, color: Colors.white),
-                        ),
-                      ),
                     ),
                   ),
                 ),
-              ),
-            ]),
-            Container(
-              height: 100,
-              width: MediaQuery.of(context).size.width,
-              // width: double.infinity,
-              child: Row(
-                // mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: RaisedButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(100),
+              ]),
+              Container(
+                height: MediaQuery.of(context).size.height * 0.16,
+                width: MediaQuery.of(context).size.width,
+                // width: double.infinity,
+                child: Row(
+                  // mainAxisSize: MainAxisSize.min,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: RaisedButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                                MediaQuery.of(context).size.width * 0.030),
+                          ),
                         ),
-                      ),
-                      color: isPressed ? Colors.transparent : Color(0xff602080),
-                      highlightColor: Color.fromRGBO(96, 32, 128, 1),
-                      onPressed: () {
-                        setState(() {
-                          isPressed = false;
-                        });
-                      },
-                      child: Text(
-                        '2019',
-                        style: GoogleFonts.sourceSansPro(
-                          textStyle: TextStyle(
-                              fontSize: 36,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: RaisedButton(
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(100),
-                        ),
-                      ),
-                      color: isPressed ? Color(0xff602080) : Colors.transparent,
-                      highlightColor: Color.fromRGBO(96, 32, 128, 1),
-                      onPressed: () {
-                        setState(() {
-                          isPressed = true;
-                        });
-                      },
-                      child: Text(
-                        '2020',
-                        style: GoogleFonts.sourceSansPro(
-                          textStyle: TextStyle(
-                              fontSize: 36,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Container(
-              height: 550,
-              // width: MediaQuery.of(context).size.width,
-              child: Container(
-                padding: EdgeInsets.only(left: 60),
-                child: !isPressed
-                    ? FlatButton(
+                        color:
+                            isPressed ? Colors.transparent : Color(0xff602080),
+                        highlightColor: Color.fromRGBO(96, 32, 128, 1),
                         onPressed: () {
-                          Navigator.of(context)
-                              .pushNamed(PastEventsScreen.routeName);
+                          setState(() {
+                            isPressed = false;
+                          });
                         },
-                        child: gridViewEvent(_pastEvents))
-                    : Center(
                         child: Text(
-                          'Corona corrupted the System.fun.year("2020") brother. Meet you soon in 2021.....',
-                          style: GoogleFonts.trykker(
-                              fontWeight: FontWeight.w100,
-                              fontSize: 60,
-                              color: Color(0xff9E9E9E)),
+                          '2019',
+                          style: GoogleFonts.sourceSansPro(
+                            textStyle: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.024,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white),
+                          ),
                         ),
                       ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: RaisedButton(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                                MediaQuery.of(context).size.width * 0.030),
+                          ),
+                        ),
+                        color:
+                            isPressed ? Color(0xff602080) : Colors.transparent,
+                        highlightColor: Color.fromRGBO(96, 32, 128, 1),
+                        onPressed: () {
+                          setState(() {
+                            isPressed = true;
+                          });
+                        },
+                        child: Text(
+                          '2020',
+                          style: GoogleFonts.sourceSansPro(
+                            textStyle: TextStyle(
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.024,
+                                fontWeight: FontWeight.w600,
+                                color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+              Container(
+                height: MediaQuery.of(context).size.height * 0.7,
+                // width: MediaQuery.of(context).size.width,
+                child: Container(
+                  padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.width * 0.020),
+                  child: !isPressed
+                      ? FlatButton(
+                          onPressed: () {
+                            Navigator.of(context)
+                                .pushNamed(PastEventsScreen.routeName);
+                          },
+                          child: gridViewEvent(_pastEvents,context))
+                      : Center(
+                          child: Text(
+                            'Corona corrupted the System.fun.year("2020") brother. Meet you soon in 2021.....',
+                            style: GoogleFonts.trykker(
+                                fontWeight: FontWeight.w100,
+                                fontSize:
+                                    MediaQuery.of(context).size.width * 0.020,
+                                color: Color(0xff9E9E9E)),
+                          ),
+                        ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

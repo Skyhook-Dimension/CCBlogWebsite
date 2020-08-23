@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:dots_indicator/dots_indicator.dart';
+
+import '../responsive_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:mywebapp/screens/details.dart';
 
@@ -15,13 +17,15 @@ class _CarouselWidgetState extends State<CarouselWidget> {
   double currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return
+        // child:
+        Row(
       children: [
         Container(
           child: Column(
             children: [
               Container(
-                height: 500,
+                height: MediaQuery.of(context).size.height * 0.63,
                 width: MediaQuery.of(context).size.width,
                 color: Colors.black,
                 child: CarouselSlider(
@@ -52,30 +56,37 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                           Row(
                             children: [
                               Container(
-                                height: 390,
-                                width: MediaQuery.of(context).size.width / 2,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.5,
+                                width: MediaQuery.of(context).size.width *0.52,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Container(
-                                      height: 330,
+                                      height:
+                                          MediaQuery.of(context).size.height *
+                                              0.43,
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         mainAxisAlignment:
                                             MainAxisAlignment.start,
                                         children: [
-                                          Padding(
+                                          Container(
+                                            width: MediaQuery.of(context).size.width*0.5,
                                             padding: const EdgeInsets.only(
-                                                left: 100.0),
+                                                left: 100.0,),
                                             child: Text(
                                               event['title'],
-                                              softWrap: true,
                                               style: GoogleFonts.montserrat(
                                                   textStyle: TextStyle(
                                                       color: Colors.white),
-                                                  fontSize: 64,
+                                                  fontSize:
+                                                      MediaQuery.of(context)
+                                                              .size
+                                                              .width *
+                                                          0.042, //64,
                                                   fontWeight: FontWeight.w300),
                                             ),
                                           ),
@@ -83,26 +94,39 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                             padding: const EdgeInsets.only(
                                                 left: 100.0),
                                             child: RichText(
-                                              text:
-                                                  TextSpan(children: <TextSpan>[
-                                                TextSpan(
-                                                  text: event['date']
-                                                      .substring(0, 2),
-                                                  style:
-                                                      GoogleFonts.sourceSansPro(
-                                                          color: Colors.white,
-                                                          fontSize: 45,),
-                                                ),
-                                                TextSpan(
-                                                  text: event['date'].substring(
-                                                      2, event['date'].length),
-                                                  style:
-                                                      GoogleFonts.sourceSansPro(
-                                                          color:
-                                                              Color(0xff602080),
-                                                          fontSize: 45),
-                                                ),
-                                              ]),
+                                              text: TextSpan(
+                                                children: <TextSpan>[
+                                                  TextSpan(
+                                                    text: event['date']
+                                                        .substring(0, 2),
+                                                    style: GoogleFonts
+                                                        .sourceSansPro(
+                                                      color: Colors.white,
+                                                      fontSize:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              0.029,
+                                                    ),
+                                                  ),
+                                                  TextSpan(
+                                                    text: event['date']
+                                                        .substring(
+                                                            2,
+                                                            event['date']
+                                                                .length),
+                                                    style: GoogleFonts
+                                                        .sourceSansPro(
+                                                      color: Color(0xff602080),
+                                                      fontSize:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width *
+                                                              0.029,
+                                                    ),
+                                                  ),
+                                                ],
+                                              ),
                                             ),
                                           ),
                                         ],
@@ -116,44 +140,71 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                             MainAxisAlignment.start,
                                         children: [
                                           SizedBox(
-                                            width: 150,
-                                            height: 47,
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.102,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.032,
                                             child: FlatButton(
                                               color: Color.fromRGBO(
                                                   96, 32, 128, 1),
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          10)),
+                                                          MediaQuery.of(context).size.width*0.01)),
                                               child: Text(
                                                 'Register',
+                                                softWrap: false,
                                                 style: GoogleFonts.almarai(
-                                                    textStyle: TextStyle(
-                                                        color: Colors.white),
-                                                    fontSize: 25),
+                                                  textStyle: TextStyle(
+                                                      color: Colors.white),
+                                                  fontSize:
+                                                      MediaQuery.of(context)
+                                                              .size
+                                                              .width *
+                                                          0.017,
+                                                ),
                                               ),
                                               onPressed: () {},
                                             ),
                                           ),
                                           SizedBox(
-                                            width: 40,
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.032,
                                           ),
                                           SizedBox(
-                                            width: 150,
-                                            height: 47,
+                                            width: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.102,
+                                            height: MediaQuery.of(context)
+                                                    .size
+                                                    .width *
+                                                0.032,
                                             child: FlatButton(
                                               color: Color.fromRGBO(
                                                   96, 32, 128, 1),
                                               shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(
-                                                          10)),
+                                                          MediaQuery.of(context).size.width*0.01)),
                                               child: Text(
                                                 'Details',
+                                                softWrap: false,
                                                 style: GoogleFonts.montserrat(
-                                                    textStyle: TextStyle(
-                                                        color: Colors.white),
-                                                    fontSize: 24),
+                                                  textStyle: TextStyle(
+                                                      color: Colors.white),
+                                                  fontSize:
+                                                      MediaQuery.of(context)
+                                                              .size
+                                                              .width *
+                                                          0.017,
+                                                ),
                                               ),
                                               onPressed: () {
                                                 // Navigator.of(context).pushNamed(
@@ -178,14 +229,18 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                 ),
                               ),
                               Container(
-                                height: 390,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.53,
+                                    width: MediaQuery.of(context).size.width*0.46,
                                 margin: EdgeInsets.only(
-                                  bottom: 70,
-                                  left: 30,
+                                  bottom: MediaQuery.of(context).size.height *
+                                      0.005,
+                                  left: MediaQuery.of(context).size.height *
+                                      0.003,
                                 ),
                                 child: Image.asset(
                                   event['imageUrl'],
-                                  fit: BoxFit.cover,
+                                  fit: BoxFit.fitWidth,
                                 ),
                               ),
                             ],
@@ -196,22 +251,23 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                   }).toList(),
                 ),
               ),
-              Container(
-                color: Colors.black,
-                width: MediaQuery.of(context).size.width,
-                height: 50,
-                child: DotsIndicator(
-                  mainAxisSize: MainAxisSize.max,
-                  dotsCount: widget.events.length,
-                  position: currentIndex,
-                  decorator: DotsDecorator(
-                      color: Color.fromRGBO(121, 121, 121, 1), // Inactive color
-                      activeColor: Color.fromRGBO(96, 32, 128, 1),
-                      activeSize: Size.square(23),
-                      size: Size.square(17),
-                      spacing: EdgeInsets.symmetric(horizontal: 10)),
+              if(ResponsiveWidget.isLargeScreen(context))
+                Container(
+                  color: Colors.black,
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height * 0.06,
+                  child:ResponsiveWidget.isLargeScreen(context)? DotsIndicator(
+                    mainAxisSize: MainAxisSize.max,
+                    dotsCount: widget.events.length,
+                    position: currentIndex,
+                    decorator: DotsDecorator(
+                        color: Color.fromRGBO(121, 121, 121, 1), // Inactive color
+                        activeColor: Color.fromRGBO(96, 32, 128, 1),
+                        activeSize: Size.square(23),
+                        size: Size.square(17),
+                        spacing: EdgeInsets.symmetric(horizontal: 10)),
+                  ):null,
                 ),
-              ),
             ],
           ),
         ),
