@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
-import 'package:mywebapp/responsive_widget.dart';
-import 'package:mywebapp/screens/knowUs.dart';
-import 'package:mywebapp/widgets/appbarrmobile.dart';
-import 'package:mywebapp/widgets/drawerr.dart';
+
+import '../responsive_widget.dart';
+import '../screens/knowUs.dart';
+import '../widgets/appbarrmobile.dart';
+import '../widgets/drawerr.dart';
 import '../widgets/appBarr.dart';
 
 class HomeScreen extends StatefulWidget {

@@ -47,7 +47,7 @@ Widget appBarr(BuildContext context) {
       Flexible(
         child: FlatButton(
           onPressed: () {
-           Navigator.popAndPushNamed(context, HomeScreen.routeName);
+           Navigator.pushNamed(context, HomeScreen.routeName);
           },
           child: Text(
             'Home',
@@ -61,7 +61,7 @@ Widget appBarr(BuildContext context) {
       Flexible(
         child: FlatButton(
           onPressed: () {
-            Navigator.popAndPushNamed(context, EventScreen.routeName);
+            Navigator.pushNamed(context, EventScreen.routeName);
           },
           child: Text(
             'Events',
@@ -75,7 +75,7 @@ Widget appBarr(BuildContext context) {
       Flexible(
         child: FlatButton(
           onPressed: () {
-            Navigator.popAndPushNamed(context, ProjectScreen.routeName);
+            Navigator.pushNamed(context, ProjectScreen.routeName);
           },
           child: Text(
             'Projects',
@@ -91,7 +91,7 @@ Widget appBarr(BuildContext context) {
       Flexible(
         child: FlatButton(
           onPressed: () {
-            Navigator.popAndPushNamed(context, KnowUsScreen.routeName);
+            Navigator.pushNamed(context, KnowUsScreen.routeName);
           },
           child: Text(
             'Members',
