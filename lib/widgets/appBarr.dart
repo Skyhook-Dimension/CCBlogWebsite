@@ -7,6 +7,7 @@ import '../screens/knowUs.dart';
 
 Widget appBarr(BuildContext context) {
   return AppBar(
+    automaticallyImplyLeading: false,
     title: Container(
       //height: 60,
       child: Row(

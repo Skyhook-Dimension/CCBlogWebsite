@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 Widget appBarrMobile(BuildContext context) {
   return AppBar(
+    automaticallyImplyLeading: false,
     title: Container(
       //height: 60,
       child: Row(
