@@ -12,7 +12,7 @@ Widget appBarrMobile(BuildContext context) {
               'assets/images/CC-Logo.png',
               fit: BoxFit.scaleDown,
             ),
-            radius: 28,
+            radius: 24,
             backgroundColor: Colors.transparent,
           ),
           Column(

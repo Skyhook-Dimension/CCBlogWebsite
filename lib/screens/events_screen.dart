@@ -129,10 +129,10 @@ class _EventScreenState extends State<EventScreen> {
                     ],
                   ),
                 ),
-                SizedBox(
-                    height: MediaQuery.of(context).size.height * 0.69,
-                    width: MediaQuery.of(context).size.width,
-                    child:  (ResponsiveWidget.isLargeScreen(context))? CarouselWidget(_events) :CarouselForMobile(_events),),
+                Flex(
+                  direction: Axis.vertical,
+                  mainAxisSize: MainAxisSize.max,
+                    children:[  (ResponsiveWidget.isLargeScreen(context))? CarouselWidget(_events) :CarouselForMobile(_events),],),
               ],
             ),
             Flex(direction: Axis.horizontal, children: [
