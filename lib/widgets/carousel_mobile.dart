@@ -41,7 +41,7 @@ class _CarouselForMobileState extends State<CarouselForMobile> {
           (event) {
             return Container(
               // height: MediaQuery.of(context).size.height * 10,
-              color: Colors.black,
+              // color: Colors.black,
               child: ListView(
                 // crossAxisAlignment: CrossAxisAlignment.start,
                 // mainAxisAlignment: MainAxisAlignment.start,
