@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 Widget appBarrMobile(BuildContext context) {
   return AppBar(
     automaticallyImplyLeading: false,
-    toolbarHeight: MediaQuery.of(context).size.height*0.04,
+    toolbarHeight: MediaQuery.of(context).size.height*0.045,
     
     title: Container(
       child: Row(

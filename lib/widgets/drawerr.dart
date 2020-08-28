@@ -7,7 +7,7 @@ import '../screens/knowUs.dart';
 Widget drawerr(BuildContext context) {
   return Drawer(
     child: Container(
-      color: Colors.red,
+      color: Colors.black,
       child: ListView(padding: EdgeInsets.all(MediaQuery.of(context).size
       .height*0.09), children: <Widget>[
         ListTile(
