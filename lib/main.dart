@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mywebapp/screens/contact.dart';
-
 import './screens/homepage.dart';
 import './screens/knowUs.dart';
 import './screens/events_screen.dart';

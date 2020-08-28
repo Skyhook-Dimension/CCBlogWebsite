@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
-import '../screens/events_screen.dart';
-import '../screens/project_screen.dart';
-import '../screens/contact.dart';
-import '../screens/homepage.dart';
-import '../screens/knowUs.dart';
-// import 'screens/knowUs.dart';
 
 Widget appBarrMobile(BuildContext context) {
   return AppBar(
+    automaticallyImplyLeading: false,
+    toolbarHeight: MediaQuery.of(context).size.height*0.04,
+    
     title: Container(
-      //height: 60,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
@@ -18,25 +14,31 @@ Widget appBarrMobile(BuildContext context) {
               'assets/images/CC-Logo.png',
               fit: BoxFit.scaleDown,
             ),
-            radius: 28,
+            radius: MediaQuery.of(context).size.height * 0.02,
             backgroundColor: Colors.transparent,
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text(
-                "Coding Club",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 30,
+              SafeArea(
+                child: Padding(
+                  padding: EdgeInsets.only(
+                      left: MediaQuery.of(context).size.height * 0.007),
+                  child: Text(
+                    "Coding Club",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: MediaQuery.of(context).size.width * 0.03,
+                    ),
+                  ),
                 ),
               ),
               Text(
                 "Blog",
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 16,
+                  fontSize: MediaQuery.of(context).size.width * 0.018,
                 ),
               )
             ],
@@ -44,7 +46,7 @@ Widget appBarrMobile(BuildContext context) {
         ],
       ),
     ),
-    backgroundColor: Color(0xFF181818),
-    elevation: 0,
+    backgroundColor:Color(0xFF181818),
+    elevation: MediaQuery.of(context).size.height*0.09,
   );
 }
