@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
-
-// import "../screens/details.dart";
+import "../screens/details.dart";
 
 class CarouselForMobile extends StatefulWidget {
   final List<Map<String, dynamic>> events;
@@ -16,13 +15,13 @@ class _CarouselForMobileState extends State<CarouselForMobile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // height: MediaQuery.of(context).size.height*0.5 ,
-      // width: MediaQuery.of(context).size.width,
-      // color: Colors.white,
+      width: MediaQuery.of(context).size.width,
+      height: MediaQuery.of(context).size.height * 0.33,
+      color: Colors.black,
       child: CarouselSlider(
         options: CarouselOptions(
           aspectRatio: 16 / 9,
-          // viewportFraction:,
+          // viewportFraction:0.78,
           onPageChanged: (index, reason) {
             setState(() {
               currentIndex = index.toDouble();
@@ -40,7 +39,7 @@ class _CarouselForMobileState extends State<CarouselForMobile> {
         items: widget.events.map(
           (event) {
             return Container(
-              // height: MediaQuery.of(context).size.height * 10,
+              // height: MediaQuery.of(context).size.height * 0.9,
               // color: Colors.black,
               child: ListView(
                 // crossAxisAlignment: CrossAxisAlignment.start,
@@ -54,14 +53,13 @@ class _CarouselForMobileState extends State<CarouselForMobile> {
                     width: MediaQuery.of(context).size.width * 0.5,
                     padding: EdgeInsets.only(
                         bottom: MediaQuery.of(context).size.width * 0.02),
-                    margin: EdgeInsets.only(
-                      // bottom: MediaQuery.of(context).size.height * 0.005,
-                      left: MediaQuery.of(context).size.height * 0.003,
-                    ),
+                    // margin: EdgeInsets.only(
+                    //   bottom: MediaQuery.of(context).size.height * 0.005,
+                    //   // left: MediaQuery.of(context).size.height * 0.003,
+                    // ),
                     child: Image.asset(
                       event['imageUrl'],
-                      // scale: 0.3,
-                      fit: BoxFit.scaleDown,
+                      fit: BoxFit.fitWidth,
                     ),
                   ),
                   // ),
@@ -73,7 +71,7 @@ class _CarouselForMobileState extends State<CarouselForMobile> {
                       // ),
 
                       padding: EdgeInsets.only(
-                          bottom: MediaQuery.of(context).size.width * 0.02),
+                          bottom: MediaQuery.of(context).size.width * 0.014),
                       child: Text(
                         event['title'],
                         softWrap: true,
@@ -85,11 +83,6 @@ class _CarouselForMobileState extends State<CarouselForMobile> {
                       ),
                     ),
                   ),
-                  // Padding(
-                  //   padding: EdgeInsets.only(
-                  //     left: MediaQuery.of(context).size.width * 0.09259,
-                  //   ),
-                  //   child:
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -143,10 +136,6 @@ class _CarouselForMobileState extends State<CarouselForMobile> {
                           onPressed: () {},
                         ),
                       ),
-                      // SizedBox(
-                      //   height:
-                      //       MediaQuery.of(context).size.height * 0.01,
-                      // ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.025,
                         width: MediaQuery.of(context).size.width * 0.17,
@@ -168,80 +157,14 @@ class _CarouselForMobileState extends State<CarouselForMobile> {
                                   MediaQuery.of(context).size.width * 0.024,
                             ),
                           ),
-                          onPressed: () {},
+                          onPressed: () {
+                            // Navigator.of(context)
+                            //     .pushNamed(DetailPageScreen.routeName);
+                          },
                         ),
                       ),
-                      // SizedBox(
-                      //   height: MediaQuery.of(context).size.height * 0.049,
-                      //   width: MediaQuery.of(context).size.width * 0.12,
-                      //   child: Flex(
-                      //     direction: Axis.vertical,
-                      //     children: [
-                      //       // Expanded(
-                      //       //   child: RaisedButton(
-                      //       //     padding: EdgeInsets.only(
-                      //       //         left: MediaQuery.of(context).size.width *
-                      //       //             0.006),
-                      //       //     color: Color.fromRGBO(96, 32, 128, 1),
-                      //       //     shape: RoundedRectangleBorder(
-                      //       //       borderRadius: BorderRadius.circular(
-                      //       //         MediaQuery.of(context).size.width * 0.01,
-                      //       //       ),
-                      //       //     ),
-                      //       //     child: Center(
-                      //       //       child: Text(
-                      //       //         'Register',
-                      //       //         softWrap: false,
-                      //       //         style: GoogleFonts.almarai(
-                      //       //           textStyle:
-                      //       //               TextStyle(color: Colors.white),
-                      //       //           fontSize:
-                      //       //               MediaQuery.of(context).size.width *
-                      //       //                   0.017,
-                      //       //         ),
-                      //       //       ),
-                      //       //     ),
-                      //       //     onPressed: () {},
-                      //       //   ),
-                      //       // ),
-                      //       // SizedBox(
-                      //       //   height:
-                      //       //       MediaQuery.of(context).size.height * 0.01,
-                      //       // ),
-                      //       // Expanded(
-                      //       //   child: RaisedButton(
-                      //       //     padding: EdgeInsets.only(
-                      //       //         left: MediaQuery.of(context).size.width *
-                      //       //             0.006),
-                      //       //     color: Color.fromRGBO(96, 32, 128, 1),
-                      //       //     shape: RoundedRectangleBorder(
-                      //       //       borderRadius: BorderRadius.circular(
-                      //       //         MediaQuery.of(context).size.width * 0.01,
-                      //       //       ),
-                      //       //     ),
-                      //       //     child: Text(
-                      //       //       'Details',
-                      //       //       softWrap: false,
-                      //       //       style: GoogleFonts.almarai(
-                      //       //         textStyle: TextStyle(color: Colors.white),
-                      //       //         fontSize:
-                      //       //             MediaQuery.of(context).size.width *
-                      //       //                 0.017,
-                      //       //       ),
-                      //       //     ),
-                      //       //     onPressed: () {},
-                      //       //   ),
-                      //       // ),
-                      //     ],
-                      //   ),
-                      // ),
                     ],
                   ),
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
-                  // ),
                 ],
               ),
             );

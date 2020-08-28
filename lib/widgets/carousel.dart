@@ -300,7 +300,7 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                     MediaQuery.of(context).size.width * 0.02),
                                 size: Size.square(
                                     MediaQuery.of(context).size.width * 0.015),
-                                spacing: EdgeInsets.symmetric(horizontal: 10)),
+                                spacing: EdgeInsets.symmetric(horizontal: MediaQuery.of(context).size.width*0.02)),
                           )
                         : null,
                   ),

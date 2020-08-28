@@ -93,7 +93,7 @@ class _EventScreenState extends State<EventScreen> {
           ? appBarrMobile(context)
           : appBarr(context),
       drawer:
-          (ResponsiveWidget.isLargeScreen(context)) ? null : drawerr(context),
+          !(ResponsiveWidget.isLargeScreen(context)) ? drawerr(context): null ,
       backgroundColor: Color.fromRGBO(27, 27, 27, 1),
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -106,8 +106,9 @@ class _EventScreenState extends State<EventScreen> {
               overflow: Overflow.visible,
               children: [
                 Positioned(
-                  // bottom: 80,
-                  bottom: -MediaQuery.of(context).size.height * 0.277,
+                  bottom: ResponsiveWidget.isLargeScreen(context)
+                      ? -MediaQuery.of(context).size.height * 0.350
+                      : -MediaQuery.of(context).size.height * 0.150,
                   left: -MediaQuery.of(context).size.width * 0.0527,
                   width: double.maxFinite,
                   child: Flex(
@@ -132,40 +133,90 @@ class _EventScreenState extends State<EventScreen> {
                 Flex(
                   direction: Axis.vertical,
                   mainAxisSize: MainAxisSize.max,
-                    children:[  (ResponsiveWidget.isLargeScreen(context))? CarouselWidget(_events) :CarouselForMobile(_events),],),
+                  
+                  children: [
+                    (ResponsiveWidget.isLargeScreen(context))
+                        ? CarouselWidget(_events)
+                        : CarouselForMobile(_events),
+                  ],
+                ),
               ],
             ),
-            Flex(direction: Axis.horizontal, children: [
-              Expanded(
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 40.0),
-                  child: ListTile(
-                    leading: CircleAvatar(
-                      backgroundColor: Color.fromRGBO(96, 32, 128, 1),
-                      // Color(0xff966eaa),
-                      radius: MediaQuery.of(context).size.width * 0.016,
-                      child: Icon(Icons.calendar_today,
-                          color: Colors.white,
-                          size: MediaQuery.of(context).size.width * 0.019),
-                    ),
-                    title: Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        "Past Events",
-                        style: GoogleFonts.openSans(
-                          textStyle: TextStyle(
-                              fontSize:
-                                  MediaQuery.of(context).size.width * 0.029,
-                              color: Colors.white),
+            ResponsiveWidget.isLargeScreen(context)
+                ? Flex(direction: Axis.horizontal, children: [
+                    Flexible(
+                      child: Padding(
+                        padding: EdgeInsets.only(
+                            top: MediaQuery.of(context).size.height * 0.1),
+                        child: ListTile(
+                          leading: CircleAvatar(
+                            backgroundColor: Color.fromRGBO(96, 32, 128, 1),
+                            // Color(0xff966eaa),
+                            radius: MediaQuery.of(context).size.width * 0.016,
+                            child: Icon(Icons.calendar_today,
+                                color: Colors.white,
+                                size:
+                                    MediaQuery.of(context).size.width * 0.019),
+                          ),
+                          title: Align(
+                            alignment: Alignment.topLeft,
+                            child: Text(
+                              "Past Events",
+                              style: GoogleFonts.openSans(
+                                textStyle: TextStyle(
+                                    fontSize:
+                                        MediaQuery.of(context).size.width *
+                                            0.029,
+                                    color: Colors.white),
+                              ),
+                            ),
+                          ),
                         ),
                       ),
                     ),
+                  ])
+                : Padding(
+                    padding: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height * 0.002),
+                    child:
+                        Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: MediaQuery.of(context).size.height * 0.032),
+                          child: CircleAvatar(
+                            backgroundColor: Color.fromRGBO(96, 32, 128, 1),
+                            // Color(0xff966eaa),
+                            radius: MediaQuery.of(context).size.width * 0.0316,
+                            child: Icon(Icons.calendar_today,
+                                color: Colors.white,
+                                size:
+                                    MediaQuery.of(context).size.width * 0.0289),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(
+                              left: MediaQuery.of(context).size.height * 0.031,
+                              top: MediaQuery.of(context).size.height * 0.001),
+                          child: Text(
+                            "Past Events",
+                            style: GoogleFonts.openSans(
+                              textStyle: TextStyle(
+                                  fontSize:
+                                      MediaQuery.of(context).size.width * 0.039,
+                                  color: Colors.white),
+                            ),
+                          ),
+                        ),
+                        // ),
+                      ],
+                    ),
                   ),
-                ),
-              ),
-            ]),
             Container(
-              height: MediaQuery.of(context).size.height * 0.16,
+              height: ResponsiveWidget.isLargeScreen(context)
+                  ? MediaQuery.of(context).size.height * 0.16
+                  : MediaQuery.of(context).size.height * 0.04,
               width: MediaQuery.of(context).size.width,
               // width: double.infinity,
               child: Row(
@@ -173,7 +224,8 @@ class _EventScreenState extends State<EventScreen> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(
+                        MediaQuery.of(context).size.height * 0.004036),
                     child: RaisedButton(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
@@ -193,7 +245,7 @@ class _EventScreenState extends State<EventScreen> {
                         style: GoogleFonts.sourceSansPro(
                           textStyle: TextStyle(
                               fontSize:
-                                  MediaQuery.of(context).size.width * 0.024,
+                                ResponsiveWidget.isLargeScreen(context)?  MediaQuery.of(context).size.width * 0.024:MediaQuery.of(context).size.width * 0.029,
                               fontWeight: FontWeight.w600,
                               color: Colors.white),
                         ),
@@ -201,7 +253,8 @@ class _EventScreenState extends State<EventScreen> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(
+                        MediaQuery.of(context).size.height * 0.004036),
                     child: RaisedButton(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.all(
@@ -221,7 +274,7 @@ class _EventScreenState extends State<EventScreen> {
                         style: GoogleFonts.sourceSansPro(
                           textStyle: TextStyle(
                               fontSize:
-                                  MediaQuery.of(context).size.width * 0.024,
+                                ResponsiveWidget.isLargeScreen(context)?  MediaQuery.of(context).size.width * 0.024:MediaQuery.of(context).size.width * 0.029,
                               fontWeight: FontWeight.w600,
                               color: Colors.white),
                         ),
@@ -232,7 +285,9 @@ class _EventScreenState extends State<EventScreen> {
               ),
             ),
             Container(
-              height: MediaQuery.of(context).size.height * 0.7,
+              height: ResponsiveWidget.isLargeScreen(context)
+                  ? MediaQuery.of(context).size.height * 0.7
+                  : MediaQuery.of(context).size.height * 0.5,
               // width: MediaQuery.of(context).size.width,
               child: Container(
                 padding: EdgeInsets.only(
@@ -249,8 +304,9 @@ class _EventScreenState extends State<EventScreen> {
                           'Corona corrupted the System.fun.year("2020") brother. Meet you soon in 2021.....',
                           style: GoogleFonts.trykker(
                               fontWeight: FontWeight.w100,
-                              fontSize:
-                                  MediaQuery.of(context).size.width * 0.020,
+                              fontSize: ResponsiveWidget.isLargeScreen(context)
+                                  ? MediaQuery.of(context).size.width * 0.020
+                                  : MediaQuery.of(context).size.width * 0.09,
                               color: Color(0xff9E9E9E)),
                         ),
                       ),
