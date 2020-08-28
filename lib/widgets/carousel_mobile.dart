@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:google_fonts/google_fonts.dart';
-import "../screens/details.dart";
+import '../screens/eventDetails.dart';
 
 class CarouselForMobile extends StatefulWidget {
   final List<Map<String, dynamic>> events;
