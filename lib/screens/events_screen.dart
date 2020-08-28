@@ -92,7 +92,7 @@ class _EventScreenState extends State<EventScreen> {
       appBar: !ResponsiveWidget.isLargeScreen(context)
           ? appBarrMobile(context)
           : appBarr(context),
-      drawer:
+      endDrawer:
           !(ResponsiveWidget.isLargeScreen(context)) ? drawerr(context): null ,
       backgroundColor: Color.fromRGBO(27, 27, 27, 1),
       body: Container(
@@ -184,6 +184,7 @@ class _EventScreenState extends State<EventScreen> {
                       children: [
                         Padding(
                           padding: EdgeInsets.only(
+                            top:MediaQuery.of(context).size.height * 0.032,
                               left: MediaQuery.of(context).size.height * 0.032),
                           child: CircleAvatar(
                             backgroundColor: Color.fromRGBO(96, 32, 128, 1),
@@ -198,7 +199,7 @@ class _EventScreenState extends State<EventScreen> {
                         Padding(
                           padding: EdgeInsets.only(
                               left: MediaQuery.of(context).size.height * 0.031,
-                              top: MediaQuery.of(context).size.height * 0.001),
+                              top: MediaQuery.of(context).size.height * 0.035),
                           child: Text(
                             "Past Events",
                             style: GoogleFonts.openSans(
@@ -291,6 +292,7 @@ class _EventScreenState extends State<EventScreen> {
               // width: MediaQuery.of(context).size.width,
               child: Container(
                 padding: EdgeInsets.only(
+                  top:MediaQuery.of(context).size.height * 0.032,
                     left: MediaQuery.of(context).size.width * 0.020),
                 child: !isPressed
                     ? FlatButton(
