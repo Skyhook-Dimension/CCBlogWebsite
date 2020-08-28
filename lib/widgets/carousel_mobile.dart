@@ -158,8 +158,10 @@ class _CarouselForMobileState extends State<CarouselForMobile> {
                             ),
                           ),
                           onPressed: () {
-                            // Navigator.of(context)
-                            //     .pushNamed(DetailPageScreen.routeName);
+                            print("Hello");
+                            Navigator.of(context).push(MaterialPageRoute(
+                                builder: (context) => DetailPageScreen(
+                                    widget.events[currentIndex.toInt()])));
                           },
                         ),
                       ),
