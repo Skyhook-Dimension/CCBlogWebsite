@@ -92,7 +92,7 @@ class _EventScreenState extends State<EventScreen> {
       appBar: !ResponsiveWidget.isLargeScreen(context)
           ? appBarrMobile(context)
           : appBarr(context),
-      endDrawer:
+      drawer:
           !(ResponsiveWidget.isLargeScreen(context)) ? drawerr(context) : null,
       backgroundColor: Color.fromRGBO(27, 27, 27, 1),
       body: Container(
