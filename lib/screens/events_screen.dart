@@ -92,8 +92,8 @@ class _EventScreenState extends State<EventScreen> {
       appBar: !ResponsiveWidget.isLargeScreen(context)
           ? appBarrMobile(context)
           : appBarr(context),
-      endDrawer:
-          !(ResponsiveWidget.isLargeScreen(context)) ? drawerr(context): null ,
+      drawer:
+          !(ResponsiveWidget.isLargeScreen(context)) ? drawerr(context) : null,
       backgroundColor: Color.fromRGBO(27, 27, 27, 1),
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -133,7 +133,6 @@ class _EventScreenState extends State<EventScreen> {
                 Flex(
                   direction: Axis.vertical,
                   mainAxisSize: MainAxisSize.max,
-                  
                   children: [
                     (ResponsiveWidget.isLargeScreen(context))
                         ? CarouselWidget(_events)
@@ -178,13 +177,12 @@ class _EventScreenState extends State<EventScreen> {
                 : Padding(
                     padding: EdgeInsets.only(
                         top: MediaQuery.of(context).size.height * 0.002),
-                    child:
-                        Row(
+                    child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Padding(
                           padding: EdgeInsets.only(
-                            top:MediaQuery.of(context).size.height * 0.032,
+                              top: MediaQuery.of(context).size.height * 0.032,
                               left: MediaQuery.of(context).size.height * 0.032),
                           child: CircleAvatar(
                             backgroundColor: Color.fromRGBO(96, 32, 128, 1),
@@ -245,8 +243,9 @@ class _EventScreenState extends State<EventScreen> {
                         '2019',
                         style: GoogleFonts.sourceSansPro(
                           textStyle: TextStyle(
-                              fontSize:
-                                ResponsiveWidget.isLargeScreen(context)?  MediaQuery.of(context).size.width * 0.024:MediaQuery.of(context).size.width * 0.029,
+                              fontSize: ResponsiveWidget.isLargeScreen(context)
+                                  ? MediaQuery.of(context).size.width * 0.024
+                                  : MediaQuery.of(context).size.width * 0.029,
                               fontWeight: FontWeight.w600,
                               color: Colors.white),
                         ),
@@ -274,8 +273,9 @@ class _EventScreenState extends State<EventScreen> {
                         '2020',
                         style: GoogleFonts.sourceSansPro(
                           textStyle: TextStyle(
-                              fontSize:
-                                ResponsiveWidget.isLargeScreen(context)?  MediaQuery.of(context).size.width * 0.024:MediaQuery.of(context).size.width * 0.029,
+                              fontSize: ResponsiveWidget.isLargeScreen(context)
+                                  ? MediaQuery.of(context).size.width * 0.024
+                                  : MediaQuery.of(context).size.width * 0.029,
                               fontWeight: FontWeight.w600,
                               color: Colors.white),
                         ),
@@ -292,7 +292,7 @@ class _EventScreenState extends State<EventScreen> {
               // width: MediaQuery.of(context).size.width,
               child: Container(
                 padding: EdgeInsets.only(
-                  top:MediaQuery.of(context).size.height * 0.032,
+                    top: MediaQuery.of(context).size.height * 0.032,
                     left: MediaQuery.of(context).size.width * 0.020),
                 child: !isPressed
                     ? FlatButton(

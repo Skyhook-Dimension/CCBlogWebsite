@@ -4,7 +4,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 
 import '../responsive_widget.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:mywebapp/screens/details.dart';
+import 'package:mywebapp/screens/eventDetails.dart';
 
 class CarouselWidget extends StatefulWidget {
   final List<Map<String, dynamic>> events;
@@ -237,10 +237,6 @@ class _CarouselWidgetState extends State<CarouselWidget> {
                                                   ),
                                                 ),
                                                 onPressed: () {
-                                                  // Navigator.of(context).pushNamed(
-                                                  //   DetailPageScreen.routeName,
-                                                  //   arguments: DetailsOfEvent(widget.events[currentIndex.toInt()]),
-                                                  // );
                                                   Navigator.of(context)
                                                       .push(MaterialPageRoute(
                                                     builder: (context) =>

@@ -19,7 +19,7 @@ Widget appBarr(BuildContext context) {
               'assets/images/CC-Logo.png',
               fit: BoxFit.scaleDown,
             ),
-            radius: MediaQuery.of(context).size.width*0.02,
+            radius: MediaQuery.of(context).size.width*0.017,
             backgroundColor: Colors.transparent,
           ),
           Column(
@@ -55,7 +55,7 @@ Widget appBarr(BuildContext context) {
             'Home',
             style: TextStyle(
               color: Color(0xFFF638DC),
-              fontSize: MediaQuery.of(context).size.width*0.02,
+              fontSize: MediaQuery.of(context).size.width*0.017,
             ),
           ),
         ),
@@ -69,7 +69,7 @@ Widget appBarr(BuildContext context) {
             'Events',
             style: TextStyle(
               color: Color(0xFFF638DC),
-              fontSize: MediaQuery.of(context).size.width*0.02,
+              fontSize: MediaQuery.of(context).size.width*0.017,
             ),
           ),
         ),
@@ -84,7 +84,7 @@ Widget appBarr(BuildContext context) {
             softWrap: true,
             style: TextStyle(
               color: Color(0xFFF638DC),
-              fontSize: MediaQuery.of(context).size.width*0.02,
+              fontSize: MediaQuery.of(context).size.width*0.017,
             ),
           ),
         ),
@@ -98,7 +98,7 @@ Widget appBarr(BuildContext context) {
             'Members',
             style: TextStyle(
               color: Color(0xFFF638DC),
-              fontSize: MediaQuery.of(context).size.width*0.02,
+              fontSize: MediaQuery.of(context).size.width*0.017,
             ),
           ),
         ),
